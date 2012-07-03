@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20A8C22915A344A500042839 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A8C22815A344A500042839 /* UIKit.framework */; };
+		20A8C22B15A344A500042839 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A8C22A15A344A500042839 /* Foundation.framework */; };
+		20A8C22D15A344A500042839 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A8C22C15A344A500042839 /* CoreGraphics.framework */; };
+		20A8C23315A344A500042839 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20A8C23115A344A500042839 /* InfoPlist.strings */; };
+		20A8C23515A344A500042839 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8C23415A344A500042839 /* main.m */; };
+		20A8C23915A344A500042839 /* PCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8C23815A344A500042839 /* PCKAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20A8C22415A344A500042839 /* PackingCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackingCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A8C22815A344A500042839 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		20A8C22A15A344A500042839 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		20A8C22C15A344A500042839 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		20A8C23015A344A500042839 /* PackingCheck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PackingCheck-Info.plist"; sourceTree = "<group>"; };
+		20A8C23215A344A500042839 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20A8C23415A344A500042839 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20A8C23615A344A500042839 /* PackingCheck-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PackingCheck-Prefix.pch"; sourceTree = "<group>"; };
+		20A8C23715A344A500042839 /* PCKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCKAppDelegate.h; sourceTree = "<group>"; };
+		20A8C23815A344A500042839 /* PCKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCKAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20A8C22115A344A500042839 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A8C22915A344A500042839 /* UIKit.framework in Frameworks */,
+				20A8C22B15A344A500042839 /* Foundation.framework in Frameworks */,
+				20A8C22D15A344A500042839 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20A8C21915A344A500042839 = {
+			isa = PBXGroup;
+			children = (
+				20A8C22E15A344A500042839 /* PackingCheck */,
+				20A8C22715A344A500042839 /* Frameworks */,
+				20A8C22515A344A500042839 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20A8C22515A344A500042839 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20A8C22415A344A500042839 /* PackingCheck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20A8C22715A344A500042839 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20A8C22815A344A500042839 /* UIKit.framework */,
+				20A8C22A15A344A500042839 /* Foundation.framework */,
+				20A8C22C15A344A500042839 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20A8C22E15A344A500042839 /* PackingCheck */ = {
+			isa = PBXGroup;
+			children = (
+				20A8C23715A344A500042839 /* PCKAppDelegate.h */,
+				20A8C23815A344A500042839 /* PCKAppDelegate.m */,
+				20A8C22F15A344A500042839 /* Supporting Files */,
+			);
+			path = PackingCheck;
+			sourceTree = "<group>";
+		};
+		20A8C22F15A344A500042839 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20A8C23015A344A500042839 /* PackingCheck-Info.plist */,
+				20A8C23115A344A500042839 /* InfoPlist.strings */,
+				20A8C23415A344A500042839 /* main.m */,
+				20A8C23615A344A500042839 /* PackingCheck-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20A8C22315A344A500042839 /* PackingCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A8C23C15A344A500042839 /* Build configuration list for PBXNativeTarget "PackingCheck" */;
+			buildPhases = (
+				20A8C22015A344A500042839 /* Sources */,
+				20A8C22115A344A500042839 /* Frameworks */,
+				20A8C22215A344A500042839 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PackingCheck;
+			productName = PackingCheck;
+			productReference = 20A8C22415A344A500042839 /* PackingCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20A8C21B15A344A500042839 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PCK;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = tukeQ.com;
+			};
+			buildConfigurationList = 20A8C21E15A344A500042839 /* Build configuration list for PBXProject "PackingCheck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 20A8C21915A344A500042839;
+			productRefGroup = 20A8C22515A344A500042839 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20A8C22315A344A500042839 /* PackingCheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20A8C22215A344A500042839 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A8C23315A344A500042839 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20A8C22015A344A500042839 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A8C23515A344A500042839 /* main.m in Sources */,
+				20A8C23915A344A500042839 /* PCKAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20A8C23115A344A500042839 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20A8C23215A344A500042839 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20A8C23A15A344A500042839 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		20A8C23B15A344A500042839 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20A8C23D15A344A500042839 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PackingCheck/PackingCheck-Prefix.pch";
+				INFOPLIST_FILE = "PackingCheck/PackingCheck-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		20A8C23E15A344A500042839 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PackingCheck/PackingCheck-Prefix.pch";
+				INFOPLIST_FILE = "PackingCheck/PackingCheck-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20A8C21E15A344A500042839 /* Build configuration list for PBXProject "PackingCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A8C23A15A344A500042839 /* Debug */,
+				20A8C23B15A344A500042839 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20A8C23C15A344A500042839 /* Build configuration list for PBXNativeTarget "PackingCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A8C23D15A344A500042839 /* Debug */,
+				20A8C23E15A344A500042839 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20A8C21B15A344A500042839 /* Project object */;
+}
