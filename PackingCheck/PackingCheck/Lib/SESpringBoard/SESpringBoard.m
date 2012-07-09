@@ -40,11 +40,21 @@
         // clicking this button ends editing mode for all items on the springboard
         doneEditingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         doneEditingButton.frame = CGRectMake(265, 5, 50, 34.0);
-        [doneEditingButton setTitle:@"Done" forState:UIControlStateNormal];
+        [doneEditingButton setTitle:@"确定" forState:UIControlStateNormal];
         doneEditingButton.backgroundColor = [UIColor clearColor];
         [doneEditingButton addTarget:self action:@selector(doneEditingButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         [doneEditingButton setHidden:YES];
         [navigationBar addSubview:doneEditingButton];
+
+        
+        
+        UIButton * settingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        settingButton.frame = CGRectMake(5, 5, 50, 34.0);
+        [settingButton setTitle:@"设置" forState:UIControlStateNormal];
+        settingButton.backgroundColor = [UIColor clearColor];
+        
+        [navigationBar addSubview:settingButton];
+
         
         [self addSubview:navigationBar];
         

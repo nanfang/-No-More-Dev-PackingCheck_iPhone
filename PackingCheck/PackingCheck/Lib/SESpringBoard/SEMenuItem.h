@@ -13,15 +13,15 @@
     NSString *image;
     NSString *titleText;
     UIViewController *vcToLoad;
-    id <MenuItemDelegate> __unsafe_unretained delegate;
+    __weak id<MenuItemDelegate> delegate;
     UIButton *removeButton;   
 }
 
 @property (nonatomic, assign) int tag;
 @property BOOL isRemovable;
 @property BOOL isInEditingMode;
-@property (nonatomic, unsafe_unretained) id <MenuItemDelegate> delegate;
-
+@property (weak) id<MenuItemDelegate> delegate;
+- (id) initWithTitle:(NSString *)title :(NSString *)imageName :(UIViewController *)viewController :(BOOL)removable;
 + (id) initWithTitle:(NSString *)title imageName:(NSString *)imageName viewController:(UIViewController *)viewController removable:(BOOL)removable;
 
 - (void) enableEditing;

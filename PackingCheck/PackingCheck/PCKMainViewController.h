@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCKCheckListViewController.h"
+#import "SEMenuItem.h"
 
 @interface PCKMainViewController : UIViewController
 

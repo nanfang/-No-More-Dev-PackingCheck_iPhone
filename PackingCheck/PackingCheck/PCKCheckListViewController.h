@@ -7,10 +7,11 @@
 //
 #import <UIKit/UIKit.h>
 #import "SEViewController.h"
+#import "PCKCheckList.h"
 
-
-@interface PCKCheckListViewController : SEViewController { 
+@interface PCKCheckListViewController : SEViewController<UITableViewDataSource, UITableViewDelegate> { 
     
 }
-
+@property(strong, nonatomic) UITableView *tableView;
+@property(strong, nonatomic) PCKCheckList* checkList;
 @end
