@@ -1,33 +1,27 @@
 #import <UIKit/UIKit.h>
 
-enum {
-    PCKSlidingTableViewCellSwipeRight        = UISwipeGestureRecognizerDirectionRight,   // Reveal backgroundView only with a right swipe
-    PCKSlidingTableViewCellSwipeLeft         = UISwipeGestureRecognizerDirectionLeft,    // Reveal backgroundView only with a left swipe
-    PCKSlidingTableViewCellSwipeBoth         = -1,                                       // Reveal backgroundView is allowed both with right and left swipe
-    PCKSlidingTableViewCellSwipeNone         = -2                                        // Reveal is not active
-}; typedef NSInteger PCKSlidingTableViewCellSwipe;
+@class PCKCheckItemCell;
 
-enum {
-    PCKEventTypeWillOccurr   = 0,            // Posted event will occour
-    PCKEventTypeDidOccurr    = 1             // Posted event just occurred
-}; typedef NSUInteger PCKEventType;
+typedef enum {
+	PCKCheckItemCellDirectionRight = 0,
+	PCKCheckItemCellDirectionLeft,
+	PCKCheckItemCellDirectionBoth,
+	PCKCheckItemCellDirectionNone,
+} PCKCheckItemCellDirection;
 
-typedef void (^PCKSlidingTableViewCellEventHandler)(PCKEventType eventType, BOOL backgroundRevealed, PCKSlidingTableViewCellSwipe swipeDirection);
+@protocol PCKCheckItemCellSlideDelegate <NSObject>
 
-@interface PCKCheckItemCell : UITableViewCell {
-    
-}
+@optional
+- (void)cellDidHide:(PCKCheckItemCell *)cell;
+- (void)cellDidUnhide:(PCKCheckItemCell *)cell;
+@end
 
-@property (copy)                PCKSlidingTableViewCellEventHandler          eventHandler;                   // Event delegate handler via blocks
-@property (nonatomic,assign)    PCKSlidingTableViewCellSwipe                 swipeDirection;                 // Allowed swipe-to-reveal direction
+@interface PCKCheckItemCell : UITableViewCell
 
-@property (readonly)            PCKSlidingTableViewCellSwipe                 lastSwipeDirectionOccurred;     // Last swipe occurred
-@property (nonatomic,readonly)  BOOL                                        backgroundIsRevealed;           // YES if backgroundView is visible
 
-// Reveal or hide backgroundView
-- (void) setBackgroundVisible:(BOOL) revealBackgroundView;
+@property BOOL hide;
+@property (weak) id <PCKCheckItemCellSlideDelegate> delegate;
+@property (nonatomic, assign) PCKCheckItemCellDirection direction;
+@property BOOL shouldBounce;
 
-// Toggle backgroundView visibility by animating cell top view to set direction (works even if it's not allowed to swipeDirection, so be careful)
-- (BOOL) toggleCellStatus;
-- (void) showBackground;
 @end

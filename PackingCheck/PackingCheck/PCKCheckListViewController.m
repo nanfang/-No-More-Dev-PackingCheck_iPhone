@@ -2,7 +2,7 @@
 #import "TDBadgedCell.h"
 #import "PCKCheckItemCell.h"
 @interface PCKCheckListViewController(){
-    NSSet * _checkedItems;
+    NSMutableSet * _checkedItems;
     NSMutableArray* _items;
 }
 @end
@@ -37,6 +37,7 @@
     for (int i=1; i<=30; i++) {
         [_items addObject:[NSString stringWithFormat:@"物品%d", i]];
     }
+    _checkedItems = [NSMutableSet set];
 
 }
 
@@ -49,33 +50,32 @@
     return 30;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PCKCheckListCell";
-    
+    NSString * item = [_items objectAtIndex:indexPath.row];
     PCKCheckItemCell *cell = (PCKCheckItemCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[PCKCheckItemCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = [UIFont systemFontOfSize: 18];
-        cell.swipeDirection = PCKSlidingTableViewCellSwipeRight;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.contentView.backgroundColor = [UIColor whiteColor];
-        cell.eventHandler = ^(PCKEventType eventType, BOOL backgroundRevealed, PCKSlidingTableViewCellSwipe swipeDirection) {
-            if (eventType == PCKEventTypeDidOccurr) {
-//                NSLog(@"1");
-            }else if (eventType == PCKEventTypeWillOccurr) {
-//                NSLog(@"2");
-            }
-        };
-        
+        cell.delegate = self;
+    }
+    cell.textLabel.text = item;
+    if (indexPath.row % 2){
+        cell.hide = YES;
+    }else {
+        cell.hide = NO;
+    }
+    
+    if ([_checkedItems containsObject:item]){
+    
 
     }
-    NSString * item = [_items objectAtIndex:indexPath.row];
-    cell.textLabel.text = item;
+
     return cell;
 
 }

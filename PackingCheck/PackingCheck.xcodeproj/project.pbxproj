@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20BA686815AB1A7C003F55AC /* PCKCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA686715AB1A7C003F55AC /* PCKCheckItemCell.m */; };
+		20BA687715AB9ECF003F55AC /* PCKCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */; };
 		20D43BE615A8105A002E7516 /* PCKCheckListMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */; };
 		20D43BEA15A810CC002E7516 /* PCKCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE915A810CC002E7516 /* PCKCheckList.m */; };
 		20D43BFF15A8928C002E7516 /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BFE15A8928C002E7516 /* TDBadgedCell.m */; };
@@ -63,8 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20BA686615AB1A7C003F55AC /* PCKCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKCheckItemCell.h; path = ../PCKCheckItemCell.h; sourceTree = "<group>"; };
-		20BA686715AB1A7C003F55AC /* PCKCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKCheckItemCell.m; path = ../PCKCheckItemCell.m; sourceTree = "<group>"; };
+		20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKCheckItemCell.h; path = ../PCKCheckItemCell.h; sourceTree = "<group>"; };
+		20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKCheckItemCell.m; path = ../PCKCheckItemCell.m; sourceTree = "<group>"; };
 		20D43BE415A8105A002E7516 /* PCKCheckListMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckListMenuItem.h; sourceTree = "<group>"; };
 		20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckListMenuItem.m; sourceTree = "<group>"; };
 		20D43BE815A810CC002E7516 /* PCKCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckList.h; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				20D43BE715A810A0002E7516 /* Model */,
-				20BA686615AB1A7C003F55AC /* PCKCheckItemCell.h */,
-				20BA686715AB1A7C003F55AC /* PCKCheckItemCell.m */,
+				20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */,
+				20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */,
 				20FA49BA15A7E3DE0058FA36 /* PCKCheckListViewController.h */,
 				20FA49BB15A7E3DF0058FA36 /* PCKCheckListViewController.m */,
 				20FA490715A7B9C20058FA36 /* PCKAppDelegate.h */,
@@ -402,7 +402,7 @@
 				20D43BE615A8105A002E7516 /* PCKCheckListMenuItem.m in Sources */,
 				20D43BEA15A810CC002E7516 /* PCKCheckList.m in Sources */,
 				20D43BFF15A8928C002E7516 /* TDBadgedCell.m in Sources */,
-				20BA686815AB1A7C003F55AC /* PCKCheckItemCell.m in Sources */,
+				20BA687715AB9ECF003F55AC /* PCKCheckItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
