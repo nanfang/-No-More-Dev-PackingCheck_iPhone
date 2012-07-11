@@ -320,7 +320,7 @@
 			attributes = {
 				CLASSPREFIX = PCK;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = tukeQ.com;
+				ORGANIZATIONNAME = lvtuxiongdi.com;
 			};
 			buildConfigurationList = 20FA48EE15A7B9C20058FA36 /* Build configuration list for PBXProject "PackingCheck" */;
 			compatibilityVersion = "Xcode 3.2";

@@ -28,9 +28,12 @@
     
     self.title = self.checkList.name;
     CGRect tvFrame = self.view.bounds;
+    
+    tvFrame.size = CGSizeMake(tvFrame.size.width, tvFrame.size.height - 80);
     self.tableView = [[UITableView alloc] initWithFrame:tvFrame style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
 //    self.tableView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:self.tableView];
     _items = [NSMutableArray array];
@@ -54,7 +57,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PCKCheckListCell";
-    NSString * item = [_items objectAtIndex:indexPath.row];
+
     PCKCheckItemCell *cell = (PCKCheckItemCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[PCKCheckItemCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
@@ -64,12 +67,24 @@
         cell.contentView.backgroundColor = [UIColor whiteColor];
         cell.delegate = self;
     }
-    cell.textLabel.text = item;
-    if (indexPath.row % 2){
-        cell.hide = YES;
+
+    cell.badgeString = [NSString stringWithFormat:@"%d", indexPath.row + 1];
+
+    if(indexPath.row < 3){
+        cell.badgeColor = [UIColor redColor];
     }else {
-        cell.hide = NO;
+        cell.badgeColor = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
     }
+    
+    NSString * item = [_items objectAtIndex:indexPath.row];
+    cell.textLabel.text = item;
+    cell.hide = NO;
+
+//    if (indexPath.row % 2){
+//        cell.hide = YES;
+//    }else {
+//        cell.hide = NO;
+//    }
     
     if ([_checkedItems containsObject:item]){
     

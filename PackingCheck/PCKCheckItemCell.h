@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "TDBadgedCell.h"
 
 @class PCKCheckItemCell;
 
@@ -18,10 +19,16 @@ typedef enum {
 
 @interface PCKCheckItemCell : UITableViewCell
 
-
+// slide
 @property BOOL hide;
 @property (weak) id <PCKCheckItemCellSlideDelegate> delegate;
 @property (nonatomic, assign) PCKCheckItemCellDirection direction;
 @property BOOL shouldBounce;
 
+// badge
+@property (nonatomic, strong)   NSString *badgeString;
+@property (nonatomic, strong)   TDBadgeView *badge;
+@property (nonatomic, strong)   UIColor *badgeColor;
+@property (nonatomic, strong)   UIColor *badgeColorHighlighted;
+@property BOOL showShadow;
 @end
