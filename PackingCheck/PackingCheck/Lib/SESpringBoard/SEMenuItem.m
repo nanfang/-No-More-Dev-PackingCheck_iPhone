@@ -7,7 +7,7 @@
 //
 
 #import "SEMenuItem.h"
-#import "SESpringBoard.h"
+#import "PCKSpringBoard.h"
 #import <QuartzCore/QuartzCore.h>
 #include <stdlib.h>
 
@@ -61,7 +61,7 @@
     
     // inform the springboard that the menu items are now editable so that the springboard
     // will place a done button on the navigationbar 
-    [(SESpringBoard *)self.delegate enableEditingMode];
+    [(PCKSpringBoard *)self.delegate enableEditingMode];
     
 }
 

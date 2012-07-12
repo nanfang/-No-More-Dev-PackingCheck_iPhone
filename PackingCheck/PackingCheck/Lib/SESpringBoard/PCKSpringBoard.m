@@ -6,16 +6,26 @@
 //  Copyright (c) 2011 Sarp Erdag. All rights reserved.
 //
 
-#import "SESpringBoard.h"
+#import "PCKSpringBoard.h"
 #import "SEViewController.h"
+#import "PCKMainViewController.h"
+#import "UIView+FindUIViewController.h"
 
-@implementation SESpringBoard
+@implementation PCKSpringBoard
 
 @synthesize items, title, launcher, isInEditingMode, itemCounts;
 
 - (IBAction) doneEditingButtonClicked {
     [self disableEditingMode];
 }
+
+
+
+- (IBAction)settingButtonClicked{
+    PCKMainViewController * controller = (PCKMainViewController*)[self firstAvailableUIViewController];
+    [controller startSetting];
+}
+
 
 - (id) initWithTitle:(NSString *)boardTitle items:(NSMutableArray *)menuItems image:(UIImage *) image{
     self = [super initWithFrame:CGRectMake(0, 0, 320, 460)];
@@ -52,9 +62,9 @@
         settingButton.frame = CGRectMake(5, 5, 50, 34.0);
         [settingButton setTitle:@"设置" forState:UIControlStateNormal];
         settingButton.backgroundColor = [UIColor clearColor];
-        
+        [settingButton addTarget:self action:@selector(settingButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         [navigationBar addSubview:settingButton];
-
+        
         
         [self addSubview:navigationBar];
         
@@ -120,7 +130,7 @@
 }
 
 + (id) initWithTitle:(NSString *)boardTitle items:(NSMutableArray *)menuItems launcherImage:(UIImage *)image {
-    SESpringBoard *tmpInstance = [[SESpringBoard alloc] initWithTitle:boardTitle items:menuItems image:image];
+    PCKSpringBoard *tmpInstance = [[PCKSpringBoard alloc] initWithTitle:boardTitle items:menuItems image:image];
 	return tmpInstance;
 };
 
@@ -246,6 +256,7 @@
     int page = floor((itemsContainer.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
 }
+
 
 #pragma mark - Custom Methods
 

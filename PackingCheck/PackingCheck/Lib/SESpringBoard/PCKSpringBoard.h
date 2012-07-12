@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SEMenuItem.h"
+#import "PCKConfigViewController.h"
 
-@interface SESpringBoard : UIView <MenuItemDelegate, UIScrollViewDelegate> {
+@interface PCKSpringBoard : UIView <MenuItemDelegate, UIScrollViewDelegate> {
     UINavigationBar *navigationBar;
     UINavigationController *nav;
     UIScrollView *itemsContainer;

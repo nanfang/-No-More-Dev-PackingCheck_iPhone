@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PCKCheckListViewController.h"
+#import "PCKConfigViewController.h"
 #import "SEMenuItem.h"
 
 @interface PCKMainViewController : UIViewController
+@property (nonatomic, strong) PCKConfigViewController *configViewController;
 
+- (void)startSetting;
 @end
