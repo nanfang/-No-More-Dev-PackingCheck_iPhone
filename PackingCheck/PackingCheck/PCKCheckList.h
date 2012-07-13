@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface PCKCheckList : NSObject
-@property(nonatomic) NSInteger listId;
+@property(nonatomic) int listId;
 @property(strong, nonatomic) NSString * name;
 @property(strong, nonatomic) NSString * imageName;
-- (id)initWithId:(NSInteger)listId name:(NSString*)name imageName:(NSString*)imageName;
+- (id)initWithId:(int)listId name:(NSString*)name imageName:(NSString*)imageName;
 @end

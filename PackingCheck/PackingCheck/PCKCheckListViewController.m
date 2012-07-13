@@ -1,6 +1,7 @@
 #import "PCKCheckListViewController.h"
 #import "TDBadgedCell.h"
 #import "PCKCheckItemCell.h"
+#import "PCKItem.h"
 @interface PCKCheckListViewController(){
     NSMutableSet * _checkedItems;
     NSMutableArray* _items;
@@ -8,6 +9,16 @@
 @end
 @implementation PCKCheckListViewController
 @synthesize checkList=_checkList, tableView=_tableView;
+
+
+- (void) loadItems
+{
+    _items = [NSMutableArray array];
+    for (int i=1; i<=30; i++) {
+        [_items addObject:[PCKItem ItemWithId:i name:[NSString stringWithFormat:@"我的物品%d", i]]];
+    }
+    _checkedItems = [NSMutableSet set];
+}
 
 #pragma mark - View lifecycle
 
@@ -36,11 +47,8 @@
     
 //    self.tableView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:self.tableView];
-    _items = [NSMutableArray array];
-    for (int i=1; i<=30; i++) {
-        [_items addObject:[NSString stringWithFormat:@"物品%d", i]];
-    }
-    _checkedItems = [NSMutableSet set];
+    [self loadItems];
+
 
 }
 
@@ -76,23 +84,30 @@
         cell.badgeColor = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
     }
     
-    NSString * item = [_items objectAtIndex:indexPath.row];
-    cell.textLabel.text = item;
+    PCKItem * item = [_items objectAtIndex:indexPath.row];
+    cell.textLabel.text = item.name;
+    cell.item = item;
     cell.hide = NO;
 
-//    if (indexPath.row % 2){
-//        cell.hide = YES;
-//    }else {
-//        cell.hide = NO;
-//    }
     
-    if ([_checkedItems containsObject:item]){
-    
-
+    if ([_checkedItems containsObject:[NSNumber numberWithInt:item.itemId]]){
+        cell.hide = YES;
     }
 
     return cell;
 
 }
+
+#pragma PCKCheckItemCellSlideDelegate
+- (void)cellDidHide:(PCKCheckItemCell *)cell
+{
+    [_checkedItems addObject:[NSNumber numberWithInt:cell.item.itemId]];
+}
+
+- (void)cellDidUnhide:(PCKCheckItemCell *)cell
+{
+    [_checkedItems removeObject:[NSNumber numberWithInt:cell.item.itemId]];
+}
+
 
 @end

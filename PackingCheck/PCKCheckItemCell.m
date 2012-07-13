@@ -34,6 +34,7 @@
 @synthesize _currentDirection;
 
 #pragma mark - Public Properties
+@synthesize item=_item;
 @synthesize hide = _hide;
 @synthesize direction    = _direction;
 @synthesize delegate     = _delegate;
@@ -70,64 +71,64 @@
 }
 
 
+- (void)layoutBadge
+{
+    //force badges to hide on edit.
+    if(self.editing)
+        [self.badge setHidden:YES];
+    else
+        [self.badge setHidden:NO];
+    
+    
+    CGSize badgeSize = [self.badgeString sizeWithFont:[UIFont boldSystemFontOfSize: 11]];
+    CGRect badgeframe = CGRectMake(self.contentView.frame.size.width - (badgeSize.width + 25),
+                                   (CGFloat)round((self.contentView.frame.size.height - 18) / 2),
+                                   badgeSize.width + 13,
+                                   18);
+    
+
+    [self.badge setShowShadow:self.showShadow];
+    [self.badge setFrame:badgeframe];
+    [self.badge setBadgeString:self.badgeString];
+    
+    if ((self.textLabel.frame.origin.x + self.textLabel.frame.size.width) >= badgeframe.origin.x)
+    {
+        CGFloat badgeWidth = self.textLabel.frame.size.width - badgeframe.size.width - 10.0f;
+        
+        self.textLabel.frame = CGRectMake(self.textLabel.frame.origin.x, self.textLabel.frame.origin.y, badgeWidth, self.textLabel.frame.size.height);
+    }
+    
+    if ((self.detailTextLabel.frame.origin.x + self.detailTextLabel.frame.size.width) >= badgeframe.origin.x)
+    {
+        CGFloat badgeWidth = self.detailTextLabel.frame.size.width - badgeframe.size.width - 10.0f;
+        
+        self.detailTextLabel.frame = CGRectMake(self.detailTextLabel.frame.origin.x, self.detailTextLabel.frame.origin.y, badgeWidth, self.detailTextLabel.frame.size.height);
+    }
+    
+    //set badge highlighted colours or use defaults
+    if(self.badgeColorHighlighted)
+        self.badge.badgeColorHighlighted = self.badgeColorHighlighted;
+    else 
+        self.badge.badgeColorHighlighted = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.000f];
+    
+    //set badge colours or impose defaults
+    if(self.badgeColor)
+        self.badge.badgeColor = self.badgeColor;
+    else
+        self.badge.badgeColor = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
+    [self.badge setNeedsDisplay];
+}
+
 - (void)layoutSubviews
 {
-	[super layoutSubviews];	
-    
+	[super layoutSubviews];	    
 	if(self.badgeString)
-	{
-        
-		//force badges to hide on edit.
-		if(self.editing)
-			[self.badge setHidden:YES];
-		else
-			[self.badge setHidden:NO];
-		
-		
-		CGSize badgeSize = [self.badgeString sizeWithFont:[UIFont boldSystemFontOfSize: 11]];
-		CGRect badgeframe = CGRectMake(self.contentView.frame.size.width - (badgeSize.width + 25),
-                                       (CGFloat)round((self.contentView.frame.size.height - 18) / 2),
-                                       badgeSize.width + 13,
-                                       18);
-		
-        if(self.showShadow)
-            [self.badge setShowShadow:YES];
-        else
-            [self.badge setShowShadow:NO];
-        
-		[self.badge setFrame:badgeframe];
-		[self.badge setBadgeString:self.badgeString];
-		
-		if ((self.textLabel.frame.origin.x + self.textLabel.frame.size.width) >= badgeframe.origin.x)
-		{
-			CGFloat badgeWidth = self.textLabel.frame.size.width - badgeframe.size.width - 10.0f;
-			
-			self.textLabel.frame = CGRectMake(self.textLabel.frame.origin.x, self.textLabel.frame.origin.y, badgeWidth, self.textLabel.frame.size.height);
-		}
-		
-		if ((self.detailTextLabel.frame.origin.x + self.detailTextLabel.frame.size.width) >= badgeframe.origin.x)
-		{
-			CGFloat badgeWidth = self.detailTextLabel.frame.size.width - badgeframe.size.width - 10.0f;
-			
-			self.detailTextLabel.frame = CGRectMake(self.detailTextLabel.frame.origin.x, self.detailTextLabel.frame.origin.y, badgeWidth, self.detailTextLabel.frame.size.height);
-		}
-        
-		//set badge highlighted colours or use defaults
-		if(self.badgeColorHighlighted)
-			self.badge.badgeColorHighlighted = self.badgeColorHighlighted;
-		else 
-			self.badge.badgeColorHighlighted = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.000f];
-		
-		//set badge colours or impose defaults
-		if(self.badgeColor)
-			self.badge.badgeColor = self.badgeColor;
-		else
-			self.badge.badgeColor = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
-        [self.badge setNeedsDisplay];
-	}
-	else{
+    {
+        [self layoutBadge];
+	}else{
 		[self.badge setHidden:YES];
 	}
+    
 
     
     if(self.hide){

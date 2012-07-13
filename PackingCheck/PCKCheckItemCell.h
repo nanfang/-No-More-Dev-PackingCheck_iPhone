@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "TDBadgedCell.h"
+#import "PCKItem.h"
 
 @class PCKCheckItemCell;
 
@@ -18,6 +19,9 @@ typedef enum {
 @end
 
 @interface PCKCheckItemCell : UITableViewCell
+
+// item
+@property(nonatomic,strong) PCKItem * item;
 
 // slide
 @property BOOL hide;

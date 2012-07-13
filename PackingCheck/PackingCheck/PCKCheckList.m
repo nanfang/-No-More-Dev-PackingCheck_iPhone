@@ -10,7 +10,7 @@
 
 @implementation PCKCheckList
 @synthesize name=_name, listId=_listId, imageName=_imageName;
-- (id)initWithId:(NSInteger)listId name:(NSString*)name imageName:(NSString*)imageName
+- (id)initWithId:(int)listId name:(NSString*)name imageName:(NSString*)imageName
 {
     self = [super init];
     if (self) {

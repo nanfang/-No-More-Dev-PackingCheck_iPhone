@@ -12,6 +12,7 @@
 		20BA688A15AF15F7003F55AC /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA688815AF15F7003F55AC /* UIView+Screenshot.m */; };
 		20BA688E15AF170B003F55AC /* PCKConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA688D15AF170B003F55AC /* PCKConfigViewController.m */; };
 		20BA689515AF2704003F55AC /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA689415AF2704003F55AC /* UIView+FindUIViewController.m */; };
+		20BA689B15B08114003F55AC /* PCKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA689A15B08114003F55AC /* PCKItem.m */; };
 		20D43BE615A8105A002E7516 /* PCKCheckListMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */; };
 		20D43BEA15A810CC002E7516 /* PCKCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE915A810CC002E7516 /* PCKCheckList.m */; };
 		20D43BFF15A8928C002E7516 /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BFE15A8928C002E7516 /* TDBadgedCell.m */; };
@@ -77,6 +78,8 @@
 		20BA688D15AF170B003F55AC /* PCKConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConfigViewController.m; sourceTree = "<group>"; };
 		20BA689315AF2704003F55AC /* UIView+FindUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FindUIViewController.h"; sourceTree = "<group>"; };
 		20BA689415AF2704003F55AC /* UIView+FindUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindUIViewController.m"; sourceTree = "<group>"; };
+		20BA689915B08114003F55AC /* PCKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKItem.h; sourceTree = "<group>"; };
+		20BA689A15B08114003F55AC /* PCKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKItem.m; sourceTree = "<group>"; };
 		20D43BE415A8105A002E7516 /* PCKCheckListMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckListMenuItem.h; sourceTree = "<group>"; };
 		20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckListMenuItem.m; sourceTree = "<group>"; };
 		20D43BE815A810CC002E7516 /* PCKCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckList.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 			children = (
 				20D43BE815A810CC002E7516 /* PCKCheckList.h */,
 				20D43BE915A810CC002E7516 /* PCKCheckList.m */,
+				20BA689915B08114003F55AC /* PCKItem.h */,
+				20BA689A15B08114003F55AC /* PCKItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				20BA688A15AF15F7003F55AC /* UIView+Screenshot.m in Sources */,
 				20BA688E15AF170B003F55AC /* PCKConfigViewController.m in Sources */,
 				20BA689515AF2704003F55AC /* UIView+FindUIViewController.m in Sources */,
+				20BA689B15B08114003F55AC /* PCKItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
