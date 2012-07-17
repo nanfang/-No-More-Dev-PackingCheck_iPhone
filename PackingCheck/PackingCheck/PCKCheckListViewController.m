@@ -8,7 +8,7 @@
 }
 @end
 @implementation PCKCheckListViewController
-@synthesize checkList=_checkList, tableView=_tableView;
+@synthesize checkList=_checkList, tableView=_tableView, progressView=_progressView;
 
 
 - (void) loadItems
@@ -48,8 +48,9 @@
 //    self.tableView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:self.tableView];
     [self loadItems];
-
-
+    // TODO make it looks better 
+    self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(240.0f, 4.0f, 36.0f, 36.0f)];
+    [self.navigationController.toolbar addSubview:self.progressView];
 }
 
 
@@ -102,11 +103,14 @@
 - (void)cellDidHide:(PCKCheckItemCell *)cell
 {
     [_checkedItems addObject:[NSNumber numberWithInt:cell.item.itemId]];
+    // TODO compute right number
+    self.progressView.progress += 0.03f;
 }
 
 - (void)cellDidUnhide:(PCKCheckItemCell *)cell
 {
     [_checkedItems removeObject:[NSNumber numberWithInt:cell.item.itemId]];
+    self.progressView.progress -= 0.03f;
 }
 
 
