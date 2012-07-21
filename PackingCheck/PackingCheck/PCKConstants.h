@@ -1,0 +1,1 @@
+extern NSString *const DB_PATH;

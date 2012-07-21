@@ -1,0 +1,3 @@
+[submodule "SQLMigrate"]
+	path = SQLMigrate
+	url = https://github.com/nanfang/SQLMigrate

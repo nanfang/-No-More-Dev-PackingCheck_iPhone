@@ -14,6 +14,10 @@
 		2007EC9415BA36E500C60C9B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */; };
 		2007EC9615BA36E500C60C9B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC9015BA36E500C60C9B /* FMResultSet.m */; };
 		2007EC9815BA3BB000C60C9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */; };
+		2007EC9E15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2007EC9D15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql */; };
+		2007ECA115BA650500C60C9B /* PCKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007ECA015BA650500C60C9B /* PCKConstants.m */; };
+		2007ECA415BA7E2100C60C9B /* PCKCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007ECA315BA7E2100C60C9B /* PCKCommon.m */; };
+		2007ECEA15BAE45200C60C9B /* SQLMigrate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007ECE915BAE45200C60C9B /* SQLMigrate.m */; };
 		2099289B15B70719004EA08B /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099289015B70719004EA08B /* UIGlossyButton.m */; };
 		2099289D15B70719004EA08B /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099289415B70719004EA08B /* UIView+LayerEffects.m */; };
 		20BA687715AB9ECF003F55AC /* PCKCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */; };
@@ -91,6 +95,13 @@
 		2007EC8F15BA36E500C60C9B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		2007EC9015BA36E500C60C9B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2007EC9D15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 0001_add_list_and_items_tables.sql; sourceTree = "<group>"; };
+		2007EC9F15BA650500C60C9B /* PCKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConstants.h; sourceTree = "<group>"; };
+		2007ECA015BA650500C60C9B /* PCKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConstants.m; sourceTree = "<group>"; };
+		2007ECA215BA7E2100C60C9B /* PCKCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCommon.h; sourceTree = "<group>"; };
+		2007ECA315BA7E2100C60C9B /* PCKCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCommon.m; sourceTree = "<group>"; };
+		2007ECE815BAE45200C60C9B /* SQLMigrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLMigrate.h; path = ../SQLMigrate/SQLMigrate/SQLMigrate.h; sourceTree = "<group>"; };
+		2007ECE915BAE45200C60C9B /* SQLMigrate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLMigrate.m; path = ../SQLMigrate/SQLMigrate/SQLMigrate.m; sourceTree = "<group>"; };
 		2099288F15B70719004EA08B /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
 		2099289015B70719004EA08B /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
 		2099289315B70719004EA08B /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
@@ -208,6 +219,23 @@
 			name = FMDB;
 			sourceTree = "<group>";
 		};
+		2007EC9C15BA3EE100C60C9B /* sqls */ = {
+			isa = PBXGroup;
+			children = (
+				2007EC9D15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql */,
+			);
+			path = sqls;
+			sourceTree = "<group>";
+		};
+		2007ECE715BAE41F00C60C9B /* SQLMigrate */ = {
+			isa = PBXGroup;
+			children = (
+				2007ECE815BAE45200C60C9B /* SQLMigrate.h */,
+				2007ECE915BAE45200C60C9B /* SQLMigrate.m */,
+			);
+			name = SQLMigrate;
+			sourceTree = "<group>";
+		};
 		2099288415B70719004EA08B /* UIGlossyButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +265,7 @@
 				20BA689415AF2704003F55AC /* UIView+FindUIViewController.m */,
 			);
 			name = Category;
+			path = PackingCheck;
 			sourceTree = "<group>";
 		};
 		20BA68A815B5B56C003F55AC /* DACircularProgress */ = {
@@ -272,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				20FA49B715A7DC660058FA36 /* Lib */,
+				20BA689215AF26D1003F55AC /* Category */,
 				20FA48FE15A7B9C20058FA36 /* PackingCheck */,
 				20FA48F715A7B9C20058FA36 /* Frameworks */,
 				20FA48F515A7B9C20058FA36 /* Products */,
@@ -301,8 +331,10 @@
 		20FA48FE15A7B9C20058FA36 /* PackingCheck */ = {
 			isa = PBXGroup;
 			children = (
-				20BA689215AF26D1003F55AC /* Category */,
-				20D43BE715A810A0002E7516 /* Model */,
+				2007ECA215BA7E2100C60C9B /* PCKCommon.h */,
+				2007ECA315BA7E2100C60C9B /* PCKCommon.m */,
+				2007EC9F15BA650500C60C9B /* PCKConstants.h */,
+				2007ECA015BA650500C60C9B /* PCKConstants.m */,
 				2007EC7D15B9AF8B00C60C9B /* PCKBuyButton.h */,
 				2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */,
 				20FA49A415A7DA390058FA36 /* PCKSpringBoard.h */,
@@ -319,6 +351,7 @@
 				20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */,
 				20BA688C15AF170B003F55AC /* PCKConfigViewController.h */,
 				20BA688D15AF170B003F55AC /* PCKConfigViewController.m */,
+				20D43BE715A810A0002E7516 /* Model */,
 				20FA48FF15A7B9C20058FA36 /* Supporting Files */,
 			);
 			path = PackingCheck;
@@ -327,6 +360,7 @@
 		20FA48FF15A7B9C20058FA36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2007EC9C15BA3EE100C60C9B /* sqls */,
 				20FA499415A7DA390058FA36 /* Icons */,
 				20FA490015A7B9C20058FA36 /* PackingCheck-Info.plist */,
 				20FA490115A7B9C20058FA36 /* InfoPlist.strings */,
@@ -396,6 +430,7 @@
 		20FA49B715A7DC660058FA36 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				2007ECE715BAE41F00C60C9B /* SQLMigrate */,
 				2007EC8515BA36C200C60C9B /* FMDB */,
 				2099288415B70719004EA08B /* UIGlossyButton */,
 				20BA68A815B5B56C003F55AC /* DACircularProgress */,
@@ -496,6 +531,7 @@
 				20D43C2F15A892DE002E7516 /* star.png in Resources */,
 				20D43C3015A892DE002E7516 /* suitcase.png in Resources */,
 				20D43C3115A892DE002E7516 /* tabletenis.png in Resources */,
+				2007EC9E15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +567,9 @@
 				2007EC9315BA36E500C60C9B /* FMDatabasePool.m in Sources */,
 				2007EC9415BA36E500C60C9B /* FMDatabaseQueue.m in Sources */,
 				2007EC9615BA36E500C60C9B /* FMResultSet.m in Sources */,
+				2007ECA115BA650500C60C9B /* PCKConstants.m in Sources */,
+				2007ECA415BA7E2100C60C9B /* PCKCommon.m in Sources */,
+				2007ECEA15BAE45200C60C9B /* SQLMigrate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

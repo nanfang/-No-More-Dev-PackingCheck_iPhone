@@ -12,14 +12,27 @@
 #import "PCKSpringBoard.h"
 #import "PCKCheckList.h"
 #import "JWFolders.h"
+#import "PCKConstants.h"
+#import "PCKCommon.h"
+#import "FMDatabase.h"
 
 @implementation PCKMainViewController
 @synthesize configViewController=_configViewController;
+
+- (void)initData
+{
+    NSString* dbpath = [PCKCommon databasePath]; 
+    FMDatabase *db = [FMDatabase databaseWithPath:dbpath];
+    [db open];
+    // TODO migrate
+    [db close];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self initData];
     }
     return self;
 }
