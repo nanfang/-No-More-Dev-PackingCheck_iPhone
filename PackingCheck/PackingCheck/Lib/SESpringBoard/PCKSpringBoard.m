@@ -46,6 +46,7 @@
         [titleLabel setText:title];
         [navigationBar addSubview:titleLabel];
         
+
         // add a button to the right side that will become visible when the items are in editing mode
         // clicking this button ends editing mode for all items on the springboard
         doneEditingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -55,6 +56,9 @@
         [doneEditingButton addTarget:self action:@selector(doneEditingButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         [doneEditingButton setHidden:YES];
         [navigationBar addSubview:doneEditingButton];
+        
+        navigationBar.barStyle = UIBarStyleBlack;
+        
 
         
         

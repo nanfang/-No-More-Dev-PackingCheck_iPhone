@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2007EC7F15B9AF8B00C60C9B /* PCKBuyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */; };
+		2007EC9115BA36E500C60C9B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC8715BA36E500C60C9B /* FMDatabase.m */; };
+		2007EC9215BA36E500C60C9B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC8915BA36E500C60C9B /* FMDatabaseAdditions.m */; };
+		2007EC9315BA36E500C60C9B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC8B15BA36E500C60C9B /* FMDatabasePool.m */; };
+		2007EC9415BA36E500C60C9B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */; };
+		2007EC9615BA36E500C60C9B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC9015BA36E500C60C9B /* FMResultSet.m */; };
+		2007EC9815BA3BB000C60C9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */; };
 		2099289B15B70719004EA08B /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099289015B70719004EA08B /* UIGlossyButton.m */; };
 		2099289D15B70719004EA08B /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099289415B70719004EA08B /* UIView+LayerEffects.m */; };
 		20BA687715AB9ECF003F55AC /* PCKCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */; };
@@ -74,6 +80,17 @@
 /* Begin PBXFileReference section */
 		2007EC7D15B9AF8B00C60C9B /* PCKBuyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKBuyButton.h; path = ../PCKBuyButton.h; sourceTree = "<group>"; };
 		2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKBuyButton.m; path = ../PCKBuyButton.m; sourceTree = "<group>"; };
+		2007EC8615BA36E500C60C9B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		2007EC8715BA36E500C60C9B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		2007EC8815BA36E500C60C9B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		2007EC8915BA36E500C60C9B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		2007EC8A15BA36E500C60C9B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		2007EC8B15BA36E500C60C9B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		2007EC8C15BA36E500C60C9B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		2007EC8F15BA36E500C60C9B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		2007EC9015BA36E500C60C9B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2099288F15B70719004EA08B /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
 		2099289015B70719004EA08B /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
 		2099289315B70719004EA08B /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
@@ -163,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2007EC9815BA3BB000C60C9B /* libsqlite3.dylib in Frameworks */,
 				20FA49B915A7DCEB0058FA36 /* QuartzCore.framework in Frameworks */,
 				20FA48F915A7B9C20058FA36 /* UIKit.framework in Frameworks */,
 				20FA48FB15A7B9C20058FA36 /* Foundation.framework in Frameworks */,
@@ -173,6 +191,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2007EC8515BA36C200C60C9B /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				2007EC8615BA36E500C60C9B /* FMDatabase.h */,
+				2007EC8715BA36E500C60C9B /* FMDatabase.m */,
+				2007EC8815BA36E500C60C9B /* FMDatabaseAdditions.h */,
+				2007EC8915BA36E500C60C9B /* FMDatabaseAdditions.m */,
+				2007EC8A15BA36E500C60C9B /* FMDatabasePool.h */,
+				2007EC8B15BA36E500C60C9B /* FMDatabasePool.m */,
+				2007EC8C15BA36E500C60C9B /* FMDatabaseQueue.h */,
+				2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */,
+				2007EC8F15BA36E500C60C9B /* FMResultSet.h */,
+				2007EC9015BA36E500C60C9B /* FMResultSet.m */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
 		2099288415B70719004EA08B /* UIGlossyButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +289,7 @@
 		20FA48F715A7B9C20058FA36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */,
 				20FA49B815A7DCEB0058FA36 /* QuartzCore.framework */,
 				20FA48F815A7B9C20058FA36 /* UIKit.framework */,
 				20FA48FA15A7B9C20058FA36 /* Foundation.framework */,
@@ -360,6 +396,7 @@
 		20FA49B715A7DC660058FA36 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				2007EC8515BA36C200C60C9B /* FMDB */,
 				2099288415B70719004EA08B /* UIGlossyButton */,
 				20BA68A815B5B56C003F55AC /* DACircularProgress */,
 				20BA688415AF15F7003F55AC /* JWFolders */,
@@ -489,6 +526,11 @@
 				2099289B15B70719004EA08B /* UIGlossyButton.m in Sources */,
 				2099289D15B70719004EA08B /* UIView+LayerEffects.m in Sources */,
 				2007EC7F15B9AF8B00C60C9B /* PCKBuyButton.m in Sources */,
+				2007EC9115BA36E500C60C9B /* FMDatabase.m in Sources */,
+				2007EC9215BA36E500C60C9B /* FMDatabaseAdditions.m in Sources */,
+				2007EC9315BA36E500C60C9B /* FMDatabasePool.m in Sources */,
+				2007EC9415BA36E500C60C9B /* FMDatabaseQueue.m in Sources */,
+				2007EC9615BA36E500C60C9B /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

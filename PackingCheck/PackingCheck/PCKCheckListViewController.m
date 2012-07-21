@@ -52,19 +52,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    PCKBuyButton *resetButton = [[PCKBuyButton alloc]initWithFrame:CGRectMake(10.0, 0.0, 80.0, 30.0)];
+    PCKBuyButton *resetButton = [[PCKBuyButton alloc]initWithFrame:CGRectMake(10.0, 0.0, 70.0, 30.0)];
     [resetButton addTarget:self action:@selector(checkDone:) forControlEvents:UIControlEventTouchUpInside];
-
     [resetButton setTitle:@"开始检查" forState:UIControlStateNormal];
     [resetButton setTitle:@"结束检查" forState:UIControlStateSelected];
-    [resetButton setSelected: NO];
 	resetButton.center = self.view.center;
 	[resetButton setBuyBlock:^(void){
         NSLog(@"buy");
     }];
-
-
     
     UIBarButtonItem *buttonCheck = [[ UIBarButtonItem alloc ]initWithCustomView:resetButton];
     
@@ -79,13 +74,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-//    self.tableView.backgroundColor = [UIColor blueColor];
+
     [self.view addSubview:self.tableView];
     [self loadItems];
-//    
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
-//
-//    [btn setFrame:CGRectMake(0, 0, 41, 33)];
+
     UIBarButtonItem *addLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                   target: self
                                                                                   action: @selector (addItem:)];
