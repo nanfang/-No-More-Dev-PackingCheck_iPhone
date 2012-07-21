@@ -10,7 +10,7 @@
 
 @implementation SEViewController
 
-@synthesize launcherImage;
+@synthesize launcherImage=_launcherImage;
 
 
 - (void)quitView: (id) sender {
@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // add a button to the navigation bar to switch back to the springboard interface (home)
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setBackgroundImage:launcherImage forState:UIControlStateNormal];
+    [btn setBackgroundImage:_launcherImage forState:UIControlStateNormal];
     [btn setFrame:CGRectMake(0, 0, 41, 33)];
     [btn addTarget:self action:@selector(quitView:)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showLauncher = [[UIBarButtonItem alloc] initWithCustomView:btn];

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIGlossyButton.h"
 
 @interface PCKConfigViewController : UIViewController
-
+@property(strong, nonatomic) UIGlossyButton * itemsButton;
+@property(strong, nonatomic) UIGlossyButton * createListButton;
 @end

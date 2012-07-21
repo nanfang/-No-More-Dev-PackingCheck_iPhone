@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2007EC7F15B9AF8B00C60C9B /* PCKBuyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */; };
+		2099289B15B70719004EA08B /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099289015B70719004EA08B /* UIGlossyButton.m */; };
+		2099289D15B70719004EA08B /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2099289415B70719004EA08B /* UIView+LayerEffects.m */; };
 		20BA687715AB9ECF003F55AC /* PCKCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */; };
 		20BA688915AF15F7003F55AC /* JWFolders.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA688615AF15F7003F55AC /* JWFolders.m */; };
 		20BA688A15AF15F7003F55AC /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA688815AF15F7003F55AC /* UIView+Screenshot.m */; };
@@ -69,6 +72,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2007EC7D15B9AF8B00C60C9B /* PCKBuyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKBuyButton.h; path = ../PCKBuyButton.h; sourceTree = "<group>"; };
+		2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKBuyButton.m; path = ../PCKBuyButton.m; sourceTree = "<group>"; };
+		2099288F15B70719004EA08B /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
+		2099289015B70719004EA08B /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
+		2099289315B70719004EA08B /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
+		2099289415B70719004EA08B /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
 		20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKCheckItemCell.h; path = ../PCKCheckItemCell.h; sourceTree = "<group>"; };
 		20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKCheckItemCell.m; path = ../PCKCheckItemCell.m; sourceTree = "<group>"; };
 		20BA688515AF15F7003F55AC /* JWFolders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWFolders.h; sourceTree = "<group>"; };
@@ -164,6 +173,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2099288415B70719004EA08B /* UIGlossyButton */ = {
+			isa = PBXGroup;
+			children = (
+				2099288F15B70719004EA08B /* UIGlossyButton.h */,
+				2099289015B70719004EA08B /* UIGlossyButton.m */,
+				2099289315B70719004EA08B /* UIView+LayerEffects.h */,
+				2099289415B70719004EA08B /* UIView+LayerEffects.m */,
+			);
+			path = UIGlossyButton;
+			sourceTree = "<group>";
+		};
 		20BA688415AF15F7003F55AC /* JWFolders */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +267,8 @@
 			children = (
 				20BA689215AF26D1003F55AC /* Category */,
 				20D43BE715A810A0002E7516 /* Model */,
+				2007EC7D15B9AF8B00C60C9B /* PCKBuyButton.h */,
+				2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */,
 				20FA49A415A7DA390058FA36 /* PCKSpringBoard.h */,
 				20FA49A515A7DA390058FA36 /* PCKSpringBoard.m */,
 				20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */,
@@ -338,6 +360,7 @@
 		20FA49B715A7DC660058FA36 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				2099288415B70719004EA08B /* UIGlossyButton */,
 				20BA68A815B5B56C003F55AC /* DACircularProgress */,
 				20BA688415AF15F7003F55AC /* JWFolders */,
 				20D43BF915A88CF8002E7516 /* TDBadgedCell */,
@@ -463,6 +486,9 @@
 				20BA689515AF2704003F55AC /* UIView+FindUIViewController.m in Sources */,
 				20BA689B15B08114003F55AC /* PCKItem.m in Sources */,
 				20BA68AB15B5B56C003F55AC /* DACircularProgressView.m in Sources */,
+				2099289B15B70719004EA08B /* UIGlossyButton.m in Sources */,
+				2099289D15B70719004EA08B /* UIView+LayerEffects.m in Sources */,
+				2007EC7F15B9AF8B00C60C9B /* PCKBuyButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

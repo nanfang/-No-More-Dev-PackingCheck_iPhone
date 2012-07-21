@@ -2,6 +2,8 @@
 #import "TDBadgedCell.h"
 #import "PCKCheckItemCell.h"
 #import "PCKItem.h"
+#import "PCKBuyButton.h"
+
 @interface PCKCheckListViewController(){
     NSMutableSet * _checkedItems;
     NSMutableArray* _items;
@@ -25,16 +27,48 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // place any dynamic stuff you want to initialize in the child view here
-    [self.navigationController setToolbarHidden:NO];    
+    [self.navigationController.toolbar addSubview:self.progressView];
+    [self.navigationController setToolbarHidden:NO];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;    
+    self.navigationController.toolbar.tintColor = [UIColor blackColor];
+}
+
+- (void)addItem: (id)sender
+{
+    NSLog(@"TODO add");
+}
+
+- (void)editItems: (id)sender
+{
+    NSLog(@"TODO edit");    
+}
+
+- (void)checkDone: (id)sender
+{
+    NSLog(@"TODO check done");    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UIBarButtonItem *buttonCheck = [[ UIBarButtonItem alloc ] initWithTitle: @"开始检查" style: UIBarButtonItemStyleBordered target:self action: nil ];
-    UIBarButtonItem *buttonManage = [[ UIBarButtonItem alloc ] initWithTitle: @"管理清单" style: UIBarButtonItemStyleBordered target:self action: nil ];
-    NSArray *toolBarItems = [[NSArray alloc] initWithObjects:buttonCheck, buttonManage, nil];
+    
+    PCKBuyButton *resetButton = [[PCKBuyButton alloc]initWithFrame:CGRectMake(10.0, 0.0, 80.0, 30.0)];
+    [resetButton addTarget:self action:@selector(checkDone:) forControlEvents:UIControlEventTouchUpInside];
+
+    [resetButton setTitle:@"开始检查" forState:UIControlStateNormal];
+    [resetButton setTitle:@"结束检查" forState:UIControlStateSelected];
+    [resetButton setSelected: NO];
+	resetButton.center = self.view.center;
+	[resetButton setBuyBlock:^(void){
+        NSLog(@"buy");
+    }];
+
+
+    
+    UIBarButtonItem *buttonCheck = [[ UIBarButtonItem alloc ]initWithCustomView:resetButton];
+    
+    NSArray *toolBarItems = [[NSArray alloc] initWithObjects:buttonCheck, nil];
     self.toolbarItems = toolBarItems;
     
     self.title = self.checkList.name;
@@ -48,9 +82,20 @@
 //    self.tableView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:self.tableView];
     [self loadItems];
+//    
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+//
+//    [btn setFrame:CGRectMake(0, 0, 41, 33)];
+    UIBarButtonItem *addLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                  target: self
+                                                                                  action: @selector (addItem:)];
+    UIBarButtonItem *editLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                                                                 target: self
+                                                                                 action: @selector (editItems:)];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editLauncher,addLauncher, nil];
     // TODO make it looks better 
     self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(240.0f, 4.0f, 36.0f, 36.0f)];
-    [self.navigationController.toolbar addSubview:self.progressView];
 }
 
 
