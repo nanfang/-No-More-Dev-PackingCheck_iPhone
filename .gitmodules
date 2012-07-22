@@ -1,3 +1,6 @@
 [submodule "SQLMigrate"]
 	path = SQLMigrate
-	url = https://github.com/nanfang/SQLMigrate
+	url = git@github.com:nanfang/SQLMigrate
+[submodule "ObjcUtils"]
+	path = ObjcUtils
+	url = git@github.com:nanfang/ObjcUtils.git

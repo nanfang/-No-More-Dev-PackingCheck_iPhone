@@ -7,13 +7,24 @@
 //
 
 #import "PCKAppDelegate.h"
+#import "PCKCommon.h"
+#import "SQLMigrate.h"
 
 @implementation PCKAppDelegate
 
 @synthesize window = _window, viewController = _viewController;
 
+- (void)initData
+{
+    FMDatabase *db = [PCKCommon database];
+    [SQLMigrate migrate:db];
+    [db close];
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self initData];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[PCKMainViewController alloc]init];
     self.viewController.view.frame = self.window.frame;

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FMDatabase.h"
 
 @interface PCKCommon : NSObject
-+(NSString*)documentPath;
-+(NSString*)databasePath;
++(FMDatabase*)database;
 @end

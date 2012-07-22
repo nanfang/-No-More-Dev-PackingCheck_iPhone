@@ -27,6 +27,8 @@
 		20BA689515AF2704003F55AC /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA689415AF2704003F55AC /* UIView+FindUIViewController.m */; };
 		20BA689B15B08114003F55AC /* PCKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA689A15B08114003F55AC /* PCKItem.m */; };
 		20BA68AB15B5B56C003F55AC /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA68AA15B5B56C003F55AC /* DACircularProgressView.m */; };
+		20BD0AC315BBF75100C261E6 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AC015BBF75100C261E6 /* CommonUtils.m */; };
+		20BD0AC415BBF75100C261E6 /* DBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AC215BBF75100C261E6 /* DBUtils.m */; };
 		20D43BE615A8105A002E7516 /* PCKCheckListMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */; };
 		20D43BEA15A810CC002E7516 /* PCKCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE915A810CC002E7516 /* PCKCheckList.m */; };
 		20D43BFF15A8928C002E7516 /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BFE15A8928C002E7516 /* TDBadgedCell.m */; };
@@ -120,6 +122,10 @@
 		20BA689A15B08114003F55AC /* PCKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKItem.m; sourceTree = "<group>"; };
 		20BA68A915B5B56C003F55AC /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
 		20BA68AA15B5B56C003F55AC /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		20BD0ABF15BBF75100C261E6 /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		20BD0AC015BBF75100C261E6 /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
+		20BD0AC115BBF75100C261E6 /* DBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBUtils.h; sourceTree = "<group>"; };
+		20BD0AC215BBF75100C261E6 /* DBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBUtils.m; sourceTree = "<group>"; };
 		20D43BE415A8105A002E7516 /* PCKCheckListMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckListMenuItem.h; sourceTree = "<group>"; };
 		20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckListMenuItem.m; sourceTree = "<group>"; };
 		20D43BE815A810CC002E7516 /* PCKCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckList.h; sourceTree = "<group>"; };
@@ -277,6 +283,18 @@
 			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
+		20BD0ABE15BBF75100C261E6 /* ObjcUtils */ = {
+			isa = PBXGroup;
+			children = (
+				20BD0ABF15BBF75100C261E6 /* CommonUtils.h */,
+				20BD0AC015BBF75100C261E6 /* CommonUtils.m */,
+				20BD0AC115BBF75100C261E6 /* DBUtils.h */,
+				20BD0AC215BBF75100C261E6 /* DBUtils.m */,
+			);
+			name = ObjcUtils;
+			path = ../ObjcUtils/ObjcUtils;
+			sourceTree = "<group>";
+		};
 		20D43BE715A810A0002E7516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +448,7 @@
 		20FA49B715A7DC660058FA36 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				20BD0ABE15BBF75100C261E6 /* ObjcUtils */,
 				2007ECE715BAE41F00C60C9B /* SQLMigrate */,
 				2007EC8515BA36C200C60C9B /* FMDB */,
 				2099288415B70719004EA08B /* UIGlossyButton */,
@@ -570,6 +589,8 @@
 				2007ECA115BA650500C60C9B /* PCKConstants.m in Sources */,
 				2007ECA415BA7E2100C60C9B /* PCKCommon.m in Sources */,
 				2007ECEA15BAE45200C60C9B /* SQLMigrate.m in Sources */,
+				20BD0AC315BBF75100C261E6 /* CommonUtils.m in Sources */,
+				20BD0AC415BBF75100C261E6 /* DBUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

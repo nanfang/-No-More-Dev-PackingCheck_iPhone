@@ -58,7 +58,7 @@
         [navigationBar addSubview:doneEditingButton];
         
         navigationBar.barStyle = UIBarStyleBlack;
-        
+
 
         
         
@@ -129,6 +129,7 @@
          selector:@selector(closeViewEventHandler:)
          name:@"closeView"
          object:nil ];
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }
@@ -256,6 +257,7 @@
 #pragma mark - UIScrollView Delegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
+
     CGFloat pageWidth = itemsContainer.frame.size.width;
     int page = floor((itemsContainer.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;

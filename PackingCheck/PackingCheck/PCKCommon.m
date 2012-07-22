@@ -8,15 +8,16 @@
 
 #import "PCKCommon.h"
 #import "PCKConstants.h"
+#import "CommonUtils.h"
 
 @implementation PCKCommon
-+ (NSString*)documentPath{
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];  
-}
 
-+(NSString*)databasePath
-{
-    return [[self documentPath] stringByAppendingPathComponent:DB_PATH] ;
+// TODO make it singleton
++(FMDatabase*)database{
+    FMDatabase* db = [FMDatabase databaseWithPath:[[CommonUtils documentPath] stringByAppendingPathComponent:DB_PATH]];
+    if ([db open]) {
+        return db;
+    }
+    return nil;
 }
-
 @end
