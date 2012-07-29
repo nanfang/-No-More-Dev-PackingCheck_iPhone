@@ -12,12 +12,15 @@
 
 @implementation PCKCommon
 
-// TODO make it singleton
 +(FMDatabase*)database{
-    FMDatabase* db = [FMDatabase databaseWithPath:[[CommonUtils documentPath] stringByAppendingPathComponent:DB_PATH]];
-    if ([db open]) {
-        return db;
+    static FMDatabase *_database = nil;
+    @synchronized(self){
+        if(!_database){
+            _database = [FMDatabase databaseWithPath:[[CommonUtils documentPath] stringByAppendingPathComponent:DB_PATH]];
+            [_database open];
+        }
+        return _database;    
     }
-    return nil;
 }
+
 @end

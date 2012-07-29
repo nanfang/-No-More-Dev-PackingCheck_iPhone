@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
-
 @interface PCKCommon : NSObject
+
 +(FMDatabase*)database;
+
 @end

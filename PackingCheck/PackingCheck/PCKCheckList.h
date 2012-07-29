@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface PCKCheckList : NSObject
+#import "FMDatabase.h"
+#import "PCKModel.h"
+@interface PCKCheckList : PCKModel
 @property(nonatomic) int listId;
 @property(strong, nonatomic) NSString * name;
 @property(strong, nonatomic) NSString * imageName;
+
 - (id)initWithId:(int)listId name:(NSString*)name imageName:(NSString*)imageName;
++ (NSArray*) all;
+
 @end

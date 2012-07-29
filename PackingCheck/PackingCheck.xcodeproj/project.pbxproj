@@ -14,7 +14,6 @@
 		2007EC9415BA36E500C60C9B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */; };
 		2007EC9615BA36E500C60C9B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007EC9015BA36E500C60C9B /* FMResultSet.m */; };
 		2007EC9815BA3BB000C60C9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */; };
-		2007EC9E15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2007EC9D15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql */; };
 		2007ECA115BA650500C60C9B /* PCKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007ECA015BA650500C60C9B /* PCKConstants.m */; };
 		2007ECA415BA7E2100C60C9B /* PCKCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007ECA315BA7E2100C60C9B /* PCKCommon.m */; };
 		2007ECEA15BAE45200C60C9B /* SQLMigrate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2007ECE915BAE45200C60C9B /* SQLMigrate.m */; };
@@ -29,6 +28,9 @@
 		20BA68AB15B5B56C003F55AC /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BA68AA15B5B56C003F55AC /* DACircularProgressView.m */; };
 		20BD0AC315BBF75100C261E6 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AC015BBF75100C261E6 /* CommonUtils.m */; };
 		20BD0AC415BBF75100C261E6 /* DBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AC215BBF75100C261E6 /* DBUtils.m */; };
+		20BD0AD415BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = 20BD0AD315BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql */; };
+		20BD0AD915BDA00F00C261E6 /* NSString+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AD815BDA00F00C261E6 /* NSString+Ext.m */; };
+		20C6265D15C58F9200188B58 /* PCKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C6265C15C58F9200188B58 /* PCKModel.m */; };
 		20D43BE615A8105A002E7516 /* PCKCheckListMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */; };
 		20D43BEA15A810CC002E7516 /* PCKCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE915A810CC002E7516 /* PCKCheckList.m */; };
 		20D43BFF15A8928C002E7516 /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BFE15A8928C002E7516 /* TDBadgedCell.m */; };
@@ -97,7 +99,6 @@
 		2007EC8F15BA36E500C60C9B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		2007EC9015BA36E500C60C9B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		2007EC9D15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 0001_add_list_and_items_tables.sql; sourceTree = "<group>"; };
 		2007EC9F15BA650500C60C9B /* PCKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConstants.h; sourceTree = "<group>"; };
 		2007ECA015BA650500C60C9B /* PCKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConstants.m; sourceTree = "<group>"; };
 		2007ECA215BA7E2100C60C9B /* PCKCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCommon.h; sourceTree = "<group>"; };
@@ -126,6 +127,11 @@
 		20BD0AC015BBF75100C261E6 /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 		20BD0AC115BBF75100C261E6 /* DBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBUtils.h; sourceTree = "<group>"; };
 		20BD0AC215BBF75100C261E6 /* DBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBUtils.m; sourceTree = "<group>"; };
+		20BD0AD315BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 0001_add_check_list_table_and_data.migrate.sql; path = PackingCheck/0001_add_check_list_table_and_data.migrate.sql; sourceTree = SOURCE_ROOT; };
+		20BD0AD715BDA00F00C261E6 /* NSString+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Ext.h"; sourceTree = "<group>"; };
+		20BD0AD815BDA00F00C261E6 /* NSString+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ext.m"; sourceTree = "<group>"; };
+		20C6265B15C58F9200188B58 /* PCKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKModel.h; sourceTree = "<group>"; };
+		20C6265C15C58F9200188B58 /* PCKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKModel.m; sourceTree = "<group>"; };
 		20D43BE415A8105A002E7516 /* PCKCheckListMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckListMenuItem.h; sourceTree = "<group>"; };
 		20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckListMenuItem.m; sourceTree = "<group>"; };
 		20D43BE815A810CC002E7516 /* PCKCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckList.h; sourceTree = "<group>"; };
@@ -225,14 +231,6 @@
 			name = FMDB;
 			sourceTree = "<group>";
 		};
-		2007EC9C15BA3EE100C60C9B /* sqls */ = {
-			isa = PBXGroup;
-			children = (
-				2007EC9D15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql */,
-			);
-			path = sqls;
-			sourceTree = "<group>";
-		};
 		2007ECE715BAE41F00C60C9B /* SQLMigrate */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +267,8 @@
 			children = (
 				20BA689315AF2704003F55AC /* UIView+FindUIViewController.h */,
 				20BA689415AF2704003F55AC /* UIView+FindUIViewController.m */,
+				20BD0AD715BDA00F00C261E6 /* NSString+Ext.h */,
+				20BD0AD815BDA00F00C261E6 /* NSString+Ext.m */,
 			);
 			name = Category;
 			path = PackingCheck;
@@ -295,6 +295,14 @@
 			path = ../ObjcUtils/ObjcUtils;
 			sourceTree = "<group>";
 		};
+		20BD0ACC15BD9C7500C261E6 /* migrate */ = {
+			isa = PBXGroup;
+			children = (
+				20BD0AD315BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql */,
+			);
+			path = migrate;
+			sourceTree = "<group>";
+		};
 		20D43BE715A810A0002E7516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +310,8 @@
 				20D43BE915A810CC002E7516 /* PCKCheckList.m */,
 				20BA689915B08114003F55AC /* PCKItem.h */,
 				20BA689A15B08114003F55AC /* PCKItem.m */,
+				20C6265B15C58F9200188B58 /* PCKModel.h */,
+				20C6265C15C58F9200188B58 /* PCKModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -378,7 +388,7 @@
 		20FA48FF15A7B9C20058FA36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2007EC9C15BA3EE100C60C9B /* sqls */,
+				20BD0ACC15BD9C7500C261E6 /* migrate */,
 				20FA499415A7DA390058FA36 /* Icons */,
 				20FA490015A7B9C20058FA36 /* PackingCheck-Info.plist */,
 				20FA490115A7B9C20058FA36 /* InfoPlist.strings */,
@@ -550,7 +560,7 @@
 				20D43C2F15A892DE002E7516 /* star.png in Resources */,
 				20D43C3015A892DE002E7516 /* suitcase.png in Resources */,
 				20D43C3115A892DE002E7516 /* tabletenis.png in Resources */,
-				2007EC9E15BA3F8900C60C9B /* 0001_add_list_and_items_tables.sql in Resources */,
+				20BD0AD415BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +601,8 @@
 				2007ECEA15BAE45200C60C9B /* SQLMigrate.m in Sources */,
 				20BD0AC315BBF75100C261E6 /* CommonUtils.m in Sources */,
 				20BD0AC415BBF75100C261E6 /* DBUtils.m in Sources */,
+				20BD0AD915BDA00F00C261E6 /* NSString+Ext.m in Sources */,
+				20C6265D15C58F9200188B58 /* PCKModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

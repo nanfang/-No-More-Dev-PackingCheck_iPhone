@@ -7,6 +7,9 @@
 //
 
 #import "PCKCheckList.h"
+#import "FMDatabase.h"
+#import "PCKCommon.h"
+#import "DBUtils.h"
 
 @implementation PCKCheckList
 @synthesize name=_name, listId=_listId, imageName=_imageName;
@@ -20,5 +23,19 @@
     }
     return self;
 
+}
+
+- (id)initWithResultSet:(FMResultSet*)rs
+{
+    self = [self initWithId:[(NSNumber *)[rs objectForColumnName:@"id"] intValue]  
+                       name:[rs objectForColumnName:@"name"] 
+                    imageName:[rs objectForColumnName:@"image_name"]];
+    return self;
+}
+
+
++ (NSArray*) all
+{
+    return [self find:@"SELECT * FROM check_list ORDER BY opens"];
 }
 @end

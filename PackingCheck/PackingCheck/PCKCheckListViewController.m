@@ -15,6 +15,7 @@
 
 - (void) loadItems
 {
+    
     _items = [NSMutableArray array];
     for (int i=1; i<=30; i++) {
         [_items addObject:[PCKItem ItemWithId:i name:[NSString stringWithFormat:@"我的物品%d", i]]];

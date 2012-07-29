@@ -18,7 +18,6 @@
 {
     FMDatabase *db = [PCKCommon database];
     [SQLMigrate migrate:db];
-    [db close];
 }
 
 

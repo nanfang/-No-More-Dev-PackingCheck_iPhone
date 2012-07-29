@@ -51,24 +51,7 @@
 
 - (NSArray *)loadCheckLists
 {
-    // TODO load checklists from storages
-    NSMutableArray *checkLists = [NSMutableArray array];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:1 name:@"爬山" imageName:@"golf-club.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:2 name:@"打篮球" imageName:@"basketball.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:3 name:@"上班" imageName:@"briefcase.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:4 name:@"出差" imageName:@"airport.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:5 name:@"踢球" imageName:@"football.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:6 name:@"徒步" imageName:@"furniture.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:7 name:@"野营" imageName:@"star.png"]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:8 name:@"游泳" imageName:@"golf-club.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:9 name:@"看病" imageName:@"hospital.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:10 name:@"骑车" imageName:@"bicycle.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:11 name:@"逛街" imageName:@"shopping.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:12 name:@"逛超市" imageName:@"shopping.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:13 name:@"打羽毛球" imageName:@"badminton.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:14 name:@"西藏之旅" imageName:@"passport.png" ]];
-    [checkLists addObject:[[PCKCheckList alloc]initWithId:15 name:@"云南之旅" imageName:@"passport.png" ]];
-    return checkLists;
+    return [PCKCheckList all];
 }
 
 - (void)viewDidLoad
