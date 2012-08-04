@@ -33,9 +33,15 @@
     return self;
 }
 
+- (void)increaseOpens
+{
+    NSLog(@"incr");
+    FMDatabase* db = [PCKCommon database];
+    [db executeUpdate:@"UPDATE check_list SET opens=opens+1 WHERE id=?", [NSNumber numberWithInt:self.listId]];
+}
 
 + (NSArray*) all
 {
-    return [self find:@"SELECT * FROM check_list ORDER BY opens"];
+    return [self find:@"SELECT * FROM check_list ORDER BY opens DESC"];
 }
 @end

@@ -15,6 +15,7 @@
 @property(strong, nonatomic) NSString * imageName;
 
 - (id)initWithId:(int)listId name:(NSString*)name imageName:(NSString*)imageName;
+- (void)increaseOpens;
 + (NSArray*) all;
 
 @end

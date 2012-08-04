@@ -9,6 +9,7 @@
 #import "SEMenuItem.h"
 #import "PCKSpringBoard.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+RoundedCorner.h"
 #include <stdlib.h>
 
 @implementation SEMenuItem
@@ -114,6 +115,8 @@
 - (void) drawRect:(CGRect)rect {    
     // draw the icon image
     UIImage* img = [UIImage imageNamed:image];
+    img = [img roundedCornerImage:10 borderSize:0];
+    
     [img drawInRect:CGRectMake(20.0, 10.0, 60, 60)];
     
     // draw the menu item title shadow

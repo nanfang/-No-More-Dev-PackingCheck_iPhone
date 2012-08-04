@@ -129,7 +129,8 @@
          selector:@selector(closeViewEventHandler:)
          name:@"closeView"
          object:nil ];
-        self.backgroundColor = [UIColor blackColor];
+        
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     }
     return self;
 }

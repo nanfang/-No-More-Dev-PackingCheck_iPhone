@@ -71,7 +71,9 @@
     PCKSpringBoard *board = [PCKSpringBoard initWithTitle:@"旅途清单" items:items launcherImage:[UIImage imageNamed:@"navbtn_home.png"]];
     [self.view addSubview:board];
     self.configViewController = [[PCKConfigViewController alloc] initWithNibName:nil bundle:nil];
-
+//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg.jpg"]];
+//    [self.view addSubview:backgroundImage];
+//    [self.view sendSubviewToBack:backgroundImage];
 
 }
 
