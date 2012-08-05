@@ -32,7 +32,12 @@
     [self.navigationController setToolbarHidden:NO];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;    
     self.navigationController.toolbar.tintColor = [UIColor blackColor];
-    [self.checkList increaseOpens];
+
+}
+
+- (void)increaseOpens
+{
+    [self.checkList increaseOpens];    
 }
 
 - (void)addItem: (id)sender

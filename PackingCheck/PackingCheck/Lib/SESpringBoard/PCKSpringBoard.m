@@ -10,6 +10,7 @@
 #import "SEViewController.h"
 #import "PCKMainViewController.h"
 #import "UIView+FindUIViewController.h"
+#import "PCKCheckListViewController.h"
 
 @implementation PCKSpringBoard
 
@@ -160,6 +161,12 @@
     // first disable the editing mode so that items will stop wiggling when an item is launched
     [self disableEditingMode];
     
+    // TODO increase clicks for the list
+    
+    if([viewController isKindOfClass:[PCKCheckListViewController class]]){
+        [viewController increaseOpens];
+    }
+        
     // create a navigation bar
     nav = [UINavigationController alloc];
     SEViewController *vc = viewController;

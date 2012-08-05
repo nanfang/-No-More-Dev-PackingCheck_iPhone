@@ -21,6 +21,7 @@
 - (void) clickItem:(id) sender {
     UIButton *theButton = (UIButton *) sender;
     [[self delegate] launch:theButton.tag :vcToLoad];
+
 }
 
 - (void) pressedLong:(id) sender {
