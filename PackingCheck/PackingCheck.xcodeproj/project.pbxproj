@@ -54,6 +54,7 @@
 		20BD0AC415BBF75100C261E6 /* DBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AC215BBF75100C261E6 /* DBUtils.m */; };
 		20BD0AD415BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = 20BD0AD315BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql */; };
 		20BD0AD915BDA00F00C261E6 /* NSString+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD0AD815BDA00F00C261E6 /* NSString+Ext.m */; };
+		20C4135915CE50CF008546A2 /* 0002_add_item_table_and_data.migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = 20C4135815CE50CF008546A2 /* 0002_add_item_table_and_data.migrate.sql */; };
 		20C6265D15C58F9200188B58 /* PCKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C6265C15C58F9200188B58 /* PCKModel.m */; };
 		20D43BE615A8105A002E7516 /* PCKCheckListMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */; };
 		20D43BEA15A810CC002E7516 /* PCKCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D43BE915A810CC002E7516 /* PCKCheckList.m */; };
@@ -110,18 +111,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2007EC7D15B9AF8B00C60C9B /* PCKBuyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKBuyButton.h; path = ../PCKBuyButton.h; sourceTree = "<group>"; };
-		2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKBuyButton.m; path = ../PCKBuyButton.m; sourceTree = "<group>"; };
-		2007EC8615BA36E500C60C9B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		2007EC8715BA36E500C60C9B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		2007EC8815BA36E500C60C9B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		2007EC8915BA36E500C60C9B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		2007EC8A15BA36E500C60C9B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		2007EC8B15BA36E500C60C9B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		2007EC8C15BA36E500C60C9B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		2007EC8F15BA36E500C60C9B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		2007EC9015BA36E500C60C9B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		2007EC7D15B9AF8B00C60C9B /* PCKBuyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKBuyButton.h; sourceTree = "<group>"; };
+		2007EC7E15B9AF8B00C60C9B /* PCKBuyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKBuyButton.m; sourceTree = "<group>"; };
+		2007EC8615BA36E500C60C9B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = PackingCheck/FMDatabase.h; sourceTree = "<group>"; };
+		2007EC8715BA36E500C60C9B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = PackingCheck/FMDatabase.m; sourceTree = "<group>"; };
+		2007EC8815BA36E500C60C9B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = PackingCheck/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		2007EC8915BA36E500C60C9B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = PackingCheck/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		2007EC8A15BA36E500C60C9B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = PackingCheck/FMDatabasePool.h; sourceTree = "<group>"; };
+		2007EC8B15BA36E500C60C9B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = PackingCheck/FMDatabasePool.m; sourceTree = "<group>"; };
+		2007EC8C15BA36E500C60C9B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = PackingCheck/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		2007EC8D15BA36E500C60C9B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = PackingCheck/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		2007EC8F15BA36E500C60C9B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = PackingCheck/FMResultSet.h; sourceTree = "<group>"; };
+		2007EC9015BA36E500C60C9B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = PackingCheck/FMResultSet.m; sourceTree = "<group>"; };
 		2007EC9715BA3BB000C60C9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2007EC9F15BA650500C60C9B /* PCKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConstants.h; sourceTree = "<group>"; };
 		2007ECA015BA650500C60C9B /* PCKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConstants.m; sourceTree = "<group>"; };
@@ -160,8 +161,8 @@
 		2099289015B70719004EA08B /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
 		2099289315B70719004EA08B /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
 		2099289415B70719004EA08B /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
-		20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCKCheckItemCell.h; path = ../PCKCheckItemCell.h; sourceTree = "<group>"; };
-		20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCKCheckItemCell.m; path = ../PCKCheckItemCell.m; sourceTree = "<group>"; };
+		20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckItemCell.h; sourceTree = "<group>"; };
+		20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckItemCell.m; sourceTree = "<group>"; };
 		20BA688515AF15F7003F55AC /* JWFolders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWFolders.h; sourceTree = "<group>"; };
 		20BA688615AF15F7003F55AC /* JWFolders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWFolders.m; sourceTree = "<group>"; };
 		20BA688715AF15F7003F55AC /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
@@ -181,14 +182,15 @@
 		20BD0AD315BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 0001_add_check_list_table_and_data.migrate.sql; path = PackingCheck/0001_add_check_list_table_and_data.migrate.sql; sourceTree = SOURCE_ROOT; };
 		20BD0AD715BDA00F00C261E6 /* NSString+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Ext.h"; sourceTree = "<group>"; };
 		20BD0AD815BDA00F00C261E6 /* NSString+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ext.m"; sourceTree = "<group>"; };
+		20C4135815CE50CF008546A2 /* 0002_add_item_table_and_data.migrate.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 0002_add_item_table_and_data.migrate.sql; path = PackingCheck/0002_add_item_table_and_data.migrate.sql; sourceTree = SOURCE_ROOT; };
 		20C6265B15C58F9200188B58 /* PCKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKModel.h; sourceTree = "<group>"; };
 		20C6265C15C58F9200188B58 /* PCKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKModel.m; sourceTree = "<group>"; };
 		20D43BE415A8105A002E7516 /* PCKCheckListMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckListMenuItem.h; sourceTree = "<group>"; };
 		20D43BE515A8105A002E7516 /* PCKCheckListMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckListMenuItem.m; sourceTree = "<group>"; };
 		20D43BE815A810CC002E7516 /* PCKCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKCheckList.h; sourceTree = "<group>"; };
 		20D43BE915A810CC002E7516 /* PCKCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKCheckList.m; sourceTree = "<group>"; };
-		20D43BFD15A8928C002E7516 /* TDBadgedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBadgedCell.h; sourceTree = "<group>"; };
-		20D43BFE15A8928C002E7516 /* TDBadgedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBadgedCell.m; sourceTree = "<group>"; };
+		20D43BFD15A8928C002E7516 /* TDBadgedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDBadgedCell.h; path = PackingCheck/TDBadgedCell.h; sourceTree = "<group>"; };
+		20D43BFE15A8928C002E7516 /* TDBadgedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDBadgedCell.m; path = PackingCheck/TDBadgedCell.m; sourceTree = "<group>"; };
 		20D43C0015A892D5002E7516 /* addthis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addthis.png; sourceTree = "<group>"; };
 		20D43C0115A892D5002E7516 /* airport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airport.png; sourceTree = "<group>"; };
 		20D43C0215A892D5002E7516 /* badminton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badminton.png; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				20BD0AD315BD9D7100C261E6 /* 0001_add_check_list_table_and_data.migrate.sql */,
+				20C4135815CE50CF008546A2 /* 0002_add_item_table_and_data.migrate.sql */,
 			);
 			path = migrate;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				201BDDFF15CDA593007F0AED /* icon_trip.png in Resources */,
 				201BDE0015CDA593007F0AED /* icon_wedding.png in Resources */,
 				201BDE0B15CDB254007F0AED /* bg@2x.jpg in Resources */,
+				20C4135915CE50CF008546A2 /* 0002_add_item_table_and_data.migrate.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

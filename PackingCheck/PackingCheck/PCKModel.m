@@ -8,7 +8,9 @@
 
 #import "PCKModel.h"
 #import "PCKCommon.h"
-
+@interface FMDatabase ()
+- (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args;
+@end
 @implementation PCKModel
 
 - (id)initWithResultSet:(FMResultSet*)rs
@@ -17,11 +19,16 @@
     return nil;
 }
 
-+ (NSArray*) find:(NSString *)sql
++ (NSMutableArray*) find:(NSString *)sql, ...
 {
+    va_list args;
+    va_start(args, sql);
+
     FMDatabase *db = [PCKCommon database];
-    FMResultSet *rs = [db executeQuery:sql];
+    FMResultSet *rs = [db executeQuery:sql withArgumentsInArray:nil orDictionary:nil orVAList:args];
+    va_end(args);
     NSMutableArray *list = [NSMutableArray array];
+    
     while([rs next]){
         [list addObject:[[[self class] alloc]initWithResultSet:rs ]];
     }

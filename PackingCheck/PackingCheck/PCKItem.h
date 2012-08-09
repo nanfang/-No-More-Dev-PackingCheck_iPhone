@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PCKModel.h"
 
-@interface PCKItem : NSObject
+@interface PCKItem : PCKModel
 @property(nonatomic) int itemId;
 @property(nonatomic, strong) NSString * name;
 

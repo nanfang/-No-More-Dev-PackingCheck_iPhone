@@ -8,6 +8,7 @@
 
 #import "PCKItem.h"
 
+
 @implementation PCKItem
 @synthesize itemId=_itemId, name=_name;
 - (id)initWithId:(int)itemId name:(NSString*)name
@@ -19,6 +20,13 @@
     }
     return self;
     
+}
+
+- (id)initWithResultSet:(FMResultSet*)rs
+{
+    self = [self initWithId:[(NSNumber *)[rs objectForColumnName:@"id"] intValue]  
+                       name:[rs objectForColumnName:@"name"]];
+    return self;
 }
 
 + (id)ItemWithId:(int)itemId name:(NSString*)name

@@ -16,10 +16,7 @@
 - (void) loadItems
 {
     
-    _items = [NSMutableArray array];
-    for (int i=1; i<=30; i++) {
-        [_items addObject:[PCKItem ItemWithId:i name:[NSString stringWithFormat:@"我的物品%d", i]]];
-    }
+    _items = [_checkList items];
     _checkedItems = [NSMutableSet set];
 }
 
@@ -103,7 +100,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return [_items count];
 }
 
 

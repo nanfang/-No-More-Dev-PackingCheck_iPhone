@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMDatabase.h"
 #import "PCKModel.h"
 @interface PCKCheckList : PCKModel
 @property(nonatomic) int listId;
@@ -16,6 +15,8 @@
 
 - (id)initWithId:(int)listId name:(NSString*)name imageName:(NSString*)imageName;
 - (void)increaseOpens;
-+ (NSArray*) all;
+- (NSMutableArray*) items;
+
++ (NSMutableArray*) all;
 
 @end

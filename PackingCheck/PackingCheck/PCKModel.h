@@ -10,5 +10,5 @@
 #import "FMDatabase.h"
 @interface PCKModel : NSObject
 - (id)initWithResultSet:(FMResultSet*)rs;
-+ (NSArray*) find:(NSString *)sql;
++ (NSMutableArray*) find:(NSString *)sql, ...;
 @end

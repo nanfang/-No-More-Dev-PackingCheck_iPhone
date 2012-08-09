@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "PCKCommon.h"
 #import "DBUtils.h"
+#import "PCKItem.h"
 
 @implementation PCKCheckList
 @synthesize name=_name, listId=_listId, imageName=_imageName;
@@ -40,7 +41,12 @@
     [db executeUpdate:@"UPDATE check_list SET opens=opens+1 WHERE id=?", [NSNumber numberWithInt:self.listId]];
 }
 
-+ (NSArray*) all
+- (NSMutableArray*) items
+{
+    return [[PCKItem class] find:@"SELECT i.* FROM item i INNER JOIN list_item l ON i.id=l.item_id AND l.list_id=?", [NSNumber numberWithInt:self.listId]];
+}
+
++ (NSMutableArray*) all
 {
     return [self find:@"SELECT * FROM check_list ORDER BY opens DESC"];
 }
