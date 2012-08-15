@@ -84,6 +84,7 @@
 		20D43C2F15A892DE002E7516 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D43C1615A892DE002E7516 /* star.png */; };
 		20D43C3015A892DE002E7516 /* suitcase.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D43C1715A892DE002E7516 /* suitcase.png */; };
 		20D43C3115A892DE002E7516 /* tabletenis.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D43C1815A892DE002E7516 /* tabletenis.png */; };
+		20F9ED2D15D74E4600A1F9C1 /* PCKAddListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F9ED2C15D74E4600A1F9C1 /* PCKAddListController.m */; };
 		20FA48F915A7B9C20058FA36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FA48F815A7B9C20058FA36 /* UIKit.framework */; };
 		20FA48FB15A7B9C20058FA36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FA48FA15A7B9C20058FA36 /* Foundation.framework */; };
 		20FA48FD15A7B9C20058FA36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FA48FC15A7B9C20058FA36 /* CoreGraphics.framework */; };
@@ -216,6 +217,8 @@
 		20D43C1615A892DE002E7516 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		20D43C1715A892DE002E7516 /* suitcase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suitcase.png; sourceTree = "<group>"; };
 		20D43C1815A892DE002E7516 /* tabletenis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabletenis.png; sourceTree = "<group>"; };
+		20F9ED2B15D74E4600A1F9C1 /* PCKAddListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKAddListController.h; sourceTree = "<group>"; };
+		20F9ED2C15D74E4600A1F9C1 /* PCKAddListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKAddListController.m; sourceTree = "<group>"; };
 		20FA48F415A7B9C20058FA36 /* PackingCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackingCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FA48F815A7B9C20058FA36 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		20FA48FA15A7B9C20058FA36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -437,6 +440,8 @@
 				20FA49A515A7DA390058FA36 /* PCKSpringBoard.m */,
 				20BA687515AB9ECF003F55AC /* PCKCheckItemCell.h */,
 				20BA687615AB9ECF003F55AC /* PCKCheckItemCell.m */,
+				20F9ED2B15D74E4600A1F9C1 /* PCKAddListController.h */,
+				20F9ED2C15D74E4600A1F9C1 /* PCKAddListController.m */,
 				20FA49BA15A7E3DE0058FA36 /* PCKCheckListViewController.h */,
 				20FA49BB15A7E3DF0058FA36 /* PCKCheckListViewController.m */,
 				20FA490715A7B9C20058FA36 /* PCKAppDelegate.h */,
@@ -717,6 +722,7 @@
 				201BDE0715CDB080007F0AED /* UIImage+Resize.m in Sources */,
 				201BDE0815CDB080007F0AED /* UIImage+Alpha.m in Sources */,
 				201BDE0915CDB080007F0AED /* UIImage+RoundedCorner.m in Sources */,
+				20F9ED2D15D74E4600A1F9C1 /* PCKAddListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

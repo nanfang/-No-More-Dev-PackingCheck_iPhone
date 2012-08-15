@@ -28,5 +28,5 @@
 
 - (void) disableEditingMode;
 - (void) enableEditingMode;
-
+- (void) addMenuItem:(SEMenuItem*)item;
 @end

@@ -10,8 +10,15 @@
 #import "PCKCheckListViewController.h"
 #import "PCKConfigViewController.h"
 #import "SEMenuItem.h"
+#import "PCKSpringBoard.h"
 
-@interface PCKMainViewController : UIViewController
+@protocol PCKCheckListDelegate <NSObject>
+- (void) addCheckList:(NSString*)name;
+//- (void) removeCheckList:(int)listId;
+@end
+
+@interface PCKMainViewController : UIViewController<PCKCheckListDelegate>{
+}
 @property (nonatomic, strong) PCKConfigViewController *configViewController;
 
 - (void)startSetting;

@@ -48,7 +48,6 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.direction = PCKCheckItemCellDirectionBoth;
 		self.shouldBounce = YES;
 		
 		self._panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_pan:)] ;
@@ -56,7 +55,7 @@
 		
 		[self addGestureRecognizer:self._panGesture];
 		
-		self.contentView.backgroundColor = [UIColor whiteColor];
+//		self.contentView.backgroundColor = [UIColor whiteColor];
 		
 		UIView *backgroundView         = [[UIView alloc] initWithFrame:self.contentView.frame] ;
 		backgroundView.backgroundColor = [UIColor greenColor];

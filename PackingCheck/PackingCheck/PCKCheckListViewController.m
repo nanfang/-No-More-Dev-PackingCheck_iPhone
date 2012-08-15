@@ -7,6 +7,7 @@
 @interface PCKCheckListViewController(){
     NSMutableSet * _checkedItems;
     NSMutableArray* _items;
+    BOOL _isChecking;
 }
 @end
 @implementation PCKCheckListViewController
@@ -20,17 +21,6 @@
     _checkedItems = [NSMutableSet set];
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    // place any dynamic stuff you want to initialize in the child view here
-    [self.navigationController.toolbar addSubview:self.progressView];
-    [self.navigationController setToolbarHidden:NO];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;    
-    self.navigationController.toolbar.tintColor = [UIColor blackColor];
-
-}
 
 - (void)increaseOpens
 {
@@ -47,17 +37,34 @@
     NSLog(@"TODO edit");    
 }
 
-- (void)checkDone: (id)sender
+- (void)stopChecking
 {
-    NSLog(@"TODO check done");    
+    _isChecking = NO;
+    [_checkedItems removeAllObjects];
+    [self.tableView reloadData];
 }
 
-- (void)viewDidLoad
+- (void)startChecking
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    _isChecking = YES;
+    [self.tableView reloadData];
+}
+
+
+- (void)checkSwitch: (id)sender
+{
+    if(_isChecking){
+        [self stopChecking];
+    }else{
+        [self startChecking];
+    }
+    
+}
+
+- (void)initToolBar
+{
     PCKBuyButton *resetButton = [[PCKBuyButton alloc]initWithFrame:CGRectMake(10.0, 0.0, 70.0, 30.0)];
-    [resetButton addTarget:self action:@selector(checkDone:) forControlEvents:UIControlEventTouchUpInside];
+    [resetButton addTarget:self action:@selector(checkSwitch:) forControlEvents:UIControlEventTouchUpInside];
     [resetButton setTitle:@"开始检查" forState:UIControlStateNormal];
     [resetButton setTitle:@"结束检查" forState:UIControlStateSelected];
 	resetButton.center = self.view.center;
@@ -69,29 +76,55 @@
     
     NSArray *toolBarItems = [[NSArray alloc] initWithObjects:buttonCheck, nil];
     self.toolbarItems = toolBarItems;
-    
-    self.title = self.checkList.name;
+    // TODO make it looks better 
+    self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(240.0f, 4.0f, 36.0f, 36.0f)];
+}
+
+- (void)initItemTable
+{
     CGRect tvFrame = self.view.bounds;
-    
     tvFrame.size = CGSizeMake(tvFrame.size.width, tvFrame.size.height - 80);
     self.tableView = [[UITableView alloc] initWithFrame:tvFrame style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-
     [self.view addSubview:self.tableView];
     [self loadItems];
+}
 
-    UIBarButtonItem *addLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                  target: self
-                                                                                  action: @selector (addItem:)];
-    UIBarButtonItem *editLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
-                                                                                 target: self
-                                                                                 action: @selector (editItems:)];
+- (void)initNavBar
+{
+    self.title = self.checkList.name;
     
+    UIBarButtonItem *addLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                 target: self
+                                                                                 action: @selector (addItem:)];
+    UIBarButtonItem *editLauncher = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                                                                  target: self
+                                                                                  action: @selector (editItems:)];    
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editLauncher,addLauncher, nil];
-    // TODO make it looks better 
-    self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(240.0f, 4.0f, 36.0f, 36.0f)];
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // place any dynamic stuff you want to initialize in the child view here
+    [self.navigationController.toolbar addSubview:self.progressView];
+    [self.navigationController setToolbarHidden:NO];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;    
+    self.navigationController.toolbar.tintColor = [UIColor blackColor];
+
+}
+
+#pragma view delegates
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    _isChecking = NO;
+    [self initToolBar];
+    [self initItemTable];
+    [self initNavBar];
 }
 
 
@@ -113,8 +146,7 @@
         cell = [[PCKCheckItemCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = [UIFont systemFontOfSize: 18];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.delegate = self;
     }
 
@@ -134,6 +166,14 @@
     
     if ([_checkedItems containsObject:[NSNumber numberWithInt:item.itemId]]){
         cell.hide = YES;
+    }
+    
+    if (_isChecking){
+        cell.direction = PCKCheckItemCellDirectionBoth;
+        cell.contentView.backgroundColor = [UIColor yellowColor];
+    }else {
+        cell.direction = PCKCheckItemCellDirectionNone;
+        cell.contentView.backgroundColor = [UIColor whiteColor];
     }
 
     return cell;

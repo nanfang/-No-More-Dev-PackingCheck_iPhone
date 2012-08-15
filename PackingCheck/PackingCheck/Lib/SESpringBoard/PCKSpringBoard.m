@@ -27,6 +27,89 @@
     [controller startSetting];
 }
 
+- (void) addMenuItem:(SEMenuItem*)item
+{
+    [self.items addObject:item];
+    [itemsContainer addSubview:item];
+    item.tag = [self.items count] - 1;
+    item.delegate = self;
+    
+    int lastPageCount = [(NSNumber*)[self.itemCounts lastObject] intValue];
+
+    
+    if (lastPageCount < 12 ) {
+        int counter = lastPageCount;
+        lastPageCount++;
+        [self.itemCounts replaceObjectAtIndex:(pageControl.numberOfPages-1) withObject:[NSNumber numberWithInt:lastPageCount]];
+        int horgap = 100 * (counter%3);
+        int vergap = 95 * (counter/3);
+        
+        [item setFrame:CGRectMake(item.frame.origin.x + horgap + ((pageControl.numberOfPages-1)*300), item.frame.origin.y + vergap, 100, 100)];
+        
+    }else {
+        [self.itemCounts addObject:[NSNumber numberWithInt:1]];
+        pageControl.numberOfPages++;
+        [item setFrame:CGRectMake(item.frame.origin.x + ((pageControl.numberOfPages-1)*300), item.frame.origin.y, 100, 100)];
+        [itemsContainer setContentSize:CGSizeMake(pageControl.numberOfPages*300, itemsContainer.frame.size.height)];
+    }
+    
+}
+
+- (void) loadMenuItems
+{   
+    for (SEMenuItem *item in self.items) {
+        [itemsContainer addSubview:item];
+    }
+    self.itemCounts = [NSMutableArray array];
+    [self layoutMenuItems];
+
+}
+
+- (void)layoutMenuItems
+{
+    int counter = 0;
+    int horgap = 0;
+    int vergap = 0;
+    int numberOfPages = (ceil((float)[self.items count] / 12));
+    
+    int currentPage = 0;
+    for (SEMenuItem *item in self.items) {
+        currentPage = counter / 12;
+        item.tag = counter;
+        item.delegate = self;
+        [item setFrame:CGRectMake(item.frame.origin.x + horgap + (currentPage*300), item.frame.origin.y + vergap, 100, 100)];
+        
+        horgap = horgap + 100;
+        counter = counter + 1;
+        if(counter % 3 == 0){
+            vergap = vergap + 95;
+            horgap = 0;
+        }
+        if (counter % 12 == 0) {
+            vergap = 0;
+        }
+    }
+    
+    // record the item counts for each page
+    
+    
+    
+    int totalNumberOfItems = [self.items count];
+    int numberOfFullPages = totalNumberOfItems/12;
+    int lastPageItemCount = totalNumberOfItems - numberOfFullPages*12;
+    for (int i=0; i<numberOfFullPages; i++)
+        [self.itemCounts addObject:[NSNumber numberWithInteger:12]];
+    if (lastPageItemCount != 0)
+        [self.itemCounts addObject:[NSNumber numberWithInteger:lastPageItemCount]];
+    
+    [itemsContainer setContentSize:CGSizeMake(numberOfPages*300, itemsContainer.frame.size.height)];
+    if (numberOfPages > 1) {
+        pageControl.numberOfPages = numberOfPages;
+
+    }
+}
+
+
 
 - (id) initWithTitle:(NSString *)boardTitle items:(NSMutableArray *)menuItems image:(UIImage *) image{
     self = [super initWithFrame:CGRectMake(0, 0, 320, 460)];
@@ -61,8 +144,6 @@
         navigationBar.barStyle = UIBarStyleBlack;
 
 
-        
-        
         UIButton * settingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         settingButton.frame = CGRectMake(5, 5, 50, 34.0);
         [settingButton setTitle:@"设置" forState:UIControlStateNormal];
@@ -80,49 +161,14 @@
         [itemsContainer setPagingEnabled:YES];
         itemsContainer.showsHorizontalScrollIndicator = NO;
         [self addSubview:itemsContainer];
-        
-        self.items = menuItems;
-        int counter = 0;
-        int horgap = 0;
-        int vergap = 0;
-        int numberOfPages = (ceil((float)[menuItems count] / 12));
-        int currentPage = 0;
-        for (SEMenuItem *item in self.items) {
-            currentPage = counter / 12;
-            item.tag = counter;
-            item.delegate = self;
-            [item setFrame:CGRectMake(item.frame.origin.x + horgap + (currentPage*300), item.frame.origin.y + vergap, 100, 100)];
-            [itemsContainer addSubview:item];
-            horgap = horgap + 100;
-            counter = counter + 1;
-            if(counter % 3 == 0){
-                vergap = vergap + 95;
-                horgap = 0;
-            }
-            if (counter % 12 == 0) {
-                vergap = 0;
-            }
-        }
-        
-        // record the item counts for each page
-        self.itemCounts = [NSMutableArray array];
-        int totalNumberOfItems = [self.items count];
-        int numberOfFullPages = totalNumberOfItems % 12;
-        int lastPageItemCount = totalNumberOfItems - numberOfFullPages%12;
-        for (int i=0; i<numberOfFullPages; i++)
-            [self.itemCounts addObject:[NSNumber numberWithInteger:12]];
-        if (lastPageItemCount != 0)
-            [self.itemCounts addObject:[NSNumber numberWithInteger:lastPageItemCount]];
-        
-        [itemsContainer setContentSize:CGSizeMake(numberOfPages*300, itemsContainer.frame.size.height)];
-
         // add a page control representing the page the scrollview controls
         pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 433, 320, 20)];
-        if (numberOfPages > 1) {
-            pageControl.numberOfPages = numberOfPages;
-            pageControl.currentPage = 0;
-            [self addSubview:pageControl];
-        }
+        
+        self.items = menuItems;
+        [self loadMenuItems];
+        
+        // TODO add page view according to page number counting from loadItemMenus
+        [self addSubview:pageControl];
         
         // add listener to detect close view events
         [[NSNotificationCenter defaultCenter]
