@@ -25,6 +25,7 @@
 {
     NSMutableArray *items = [NSMutableArray array];
     PCKAddListController* addListController = [[PCKAddListController alloc] initWithNibName:nil bundle:nil];
+    addListController.delegate = self;
     SEMenuItem *addItem = [SEMenuItem initWithTitle:@"创建" imageName:@"icon_add.png" viewController:addListController removable:YES];
     addItem.isRemovable = NO;
     [items addObject:addItem];
@@ -51,38 +52,36 @@
 }
 
 #pragma mark - PCKCheckListDelegate
-- (void) addCheckList:(NSString*)name
+- (void) addListWithName:(NSString*)name imageName:(NSString*)imageName
 {
-//    NSLog(@"add list[%@]", name);
+    NSLog(@"add list[%@]", name);
     PCKCheckListViewController *checkListViewController = [[PCKCheckListViewController alloc] initWithNibName:nil bundle:nil];
-    // TODO create a new list in db
-//    checkListViewController.checkList = checkList;
-
-    SEMenuItem *menuItem = [SEMenuItem initWithTitle:name imageName:@"icon_default.png" viewController:checkListViewController removable:YES];
+    PCKCheckList * newList = [PCKCheckList createWithName:name imageName:imageName];
+    checkListViewController.checkList = newList; 
+    SEMenuItem *menuItem = [SEMenuItem initWithTitle:newList.name imageName:newList.imageName viewController:checkListViewController removable:YES];
     [_board addMenuItem:menuItem];
 }
 
 - (void)startSetting
 {
-    [self addCheckList:@"Hello旅途"];
-//    CGPoint openPoint = CGPointMake(0, 44); //arbitrary point
-//    [JWFolders openFolderWithContentView:self.configViewController.view
-//                                position:openPoint 
-//                           containerView:self.view 
-//                               openBlock:^(UIView *contentView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
-//                                   //perform custom animation here on contentView if you wish
-//
-//                               }
-//                              closeBlock:^(UIView *contentView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
-//                                  //also perform custom animation here on contentView if you wish
-//
-//                              }
-//                         completionBlock:^ {
-//                             //the folder is closed and gone, lets do something cool!
-//
-//                         }
-//                               direction:JWFoldersOpenDirectionDown
-//     ];
+    CGPoint openPoint = CGPointMake(0, 44); //arbitrary point
+    [JWFolders openFolderWithContentView:self.configViewController.view
+                                position:openPoint 
+                           containerView:self.view 
+                               openBlock:^(UIView *contentView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
+                                   //perform custom animation here on contentView if you wish
+
+                               }
+                              closeBlock:^(UIView *contentView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
+                                  //also perform custom animation here on contentView if you wish
+
+                              }
+                         completionBlock:^ {
+                             //the folder is closed and gone, lets do something cool!
+
+                         }
+                               direction:JWFoldersOpenDirectionDown
+     ];
 }
 
 - (NSArray *)loadCheckLists

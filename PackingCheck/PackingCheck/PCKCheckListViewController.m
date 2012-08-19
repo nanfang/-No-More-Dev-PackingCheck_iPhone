@@ -61,7 +61,7 @@
     
 }
 
-- (void)initToolBar
+- (void)loadToolBar
 {
     PCKBuyButton *resetButton = [[PCKBuyButton alloc]initWithFrame:CGRectMake(10.0, 0.0, 70.0, 30.0)];
     [resetButton addTarget:self action:@selector(checkSwitch:) forControlEvents:UIControlEventTouchUpInside];
@@ -80,7 +80,7 @@
     self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(240.0f, 4.0f, 36.0f, 36.0f)];
 }
 
-- (void)initItemTable
+- (void)loadItemTable
 {
     CGRect tvFrame = self.view.bounds;
     tvFrame.size = CGSizeMake(tvFrame.size.width, tvFrame.size.height - 80);
@@ -91,7 +91,7 @@
     [self loadItems];
 }
 
-- (void)initNavBar
+- (void)loadNavBar
 {
     self.title = self.checkList.name;
     
@@ -104,7 +104,32 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editLauncher,addLauncher, nil];
 }
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _isChecking = NO;
+    }
+    return self;
+}
+
+
+- (void)loadView
+{
+    [super loadView];
+    [self loadToolBar];
+    [self loadItemTable];
+    [self loadNavBar];
+
+}
+
 #pragma mark - View lifecycle
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -113,18 +138,7 @@
     [self.navigationController setToolbarHidden:NO];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;    
     self.navigationController.toolbar.tintColor = [UIColor blackColor];
-
-}
-
-#pragma view delegates
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    _isChecking = NO;
-    [self initToolBar];
-    [self initItemTable];
-    [self initNavBar];
+    
 }
 
 

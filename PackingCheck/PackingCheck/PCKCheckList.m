@@ -50,4 +50,13 @@
 {
     return [self find:@"SELECT * FROM check_list ORDER BY opens DESC"];
 }
+
++ (PCKCheckList*)createWithName:(NSString*)name imageName:(NSString*)imageName
+{
+    FMDatabase* db = [PCKCommon database];
+    [db executeUpdate:@"INSERT INTO check_list(name, image_name) VALUES (?, ?)", name, imageName];
+    int listId = [db lastInsertRowId];
+    PCKCheckList* checkList = [[PCKCheckList alloc]initWithId:listId name:name imageName:imageName];
+    return checkList;
+}
 @end

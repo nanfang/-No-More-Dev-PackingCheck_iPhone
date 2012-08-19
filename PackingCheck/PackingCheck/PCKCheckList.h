@@ -18,5 +18,5 @@
 - (NSMutableArray*) items;
 
 + (NSMutableArray*) all;
-
++ (PCKCheckList*)createWithName:(NSString*)name imageName:(NSString*)imageName;
 @end

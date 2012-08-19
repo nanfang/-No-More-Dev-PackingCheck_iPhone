@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
+
+@protocol PCKCheckListDelegate <NSObject>
+- (void) addListWithName:(NSString*)name imageName:(NSString*)imageName;
+@end
+
 @interface PCKCommon : NSObject
 
 +(FMDatabase*)database;

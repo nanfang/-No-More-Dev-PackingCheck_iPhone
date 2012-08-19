@@ -13,7 +13,7 @@
 @synthesize launcherImage=_launcherImage;
 
 
-- (void)quitView: (id) sender {
+- (void)quitView {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"closeView" object:self.navigationController.view];
 }
 
@@ -25,7 +25,7 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setBackgroundImage:_launcherImage forState:UIControlStateNormal];
     [btn setFrame:CGRectMake(0, 0, 41, 33)];
-    [btn addTarget:self action:@selector(quitView:)forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(quitView)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showLauncher = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = showLauncher;
 }

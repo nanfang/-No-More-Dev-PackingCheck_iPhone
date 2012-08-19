@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SEViewController.h"
+#import "PCKCommon.h"
 
 @interface PCKAddListController : SEViewController
-
+@property (unsafe_unretained) id<PCKCheckListDelegate> delegate;
 @end

@@ -11,5 +11,5 @@
 @interface SEViewController : UIViewController
 
 @property (nonatomic, weak) UIImage *launcherImage;
-
+- (void)quitView;
 @end

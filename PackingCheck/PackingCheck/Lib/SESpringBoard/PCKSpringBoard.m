@@ -21,7 +21,6 @@
 }
 
 
-
 - (IBAction)settingButtonClicked{
     PCKMainViewController * controller = (PCKMainViewController*)[self firstAvailableUIViewController];
     [controller startSetting];
