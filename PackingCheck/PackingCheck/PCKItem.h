@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "PCKModel.h"
 
-@interface PCKItem : PCKModel
+@interface PCKItem : PCKModel<PCKIndexed>
 @property(nonatomic) int itemId;
 @property(nonatomic, strong) NSString * name;
 
++ (NSMutableArray*) all;
 + (id)ItemWithId:(int)itemId name:(NSString*)name;
 @end

@@ -36,7 +36,8 @@
         SEMenuItem *menuItem = [SEMenuItem initWithTitle:checkList.name imageName:checkList.imageName viewController:checkListViewController removable:YES];
         [items addObject:menuItem];
     }
-    _board = [PCKSpringBoard initWithTitle:@"旅途清单" items:items launcherImage:[UIImage imageNamed:@"navbtn_home.png"]];
+    
+    _board = [PCKSpringBoard initWithTitle:@"行囊" items:items launcherImage:[UIImage imageNamed:@"navbtn_home.png"]];
     [self.view addSubview:_board];
 
 }

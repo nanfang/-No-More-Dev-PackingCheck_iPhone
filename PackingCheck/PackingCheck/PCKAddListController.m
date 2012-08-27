@@ -37,10 +37,11 @@
 }
 
 - (void)loadNavBar
+
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                           target: self
-                                                                                           action: @selector (addList)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(addList)] ;
+
+    self.navigationItem.rightBarButtonItem = doneButton;
 }
 
 - (void)loadNameField

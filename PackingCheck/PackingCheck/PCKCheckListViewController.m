@@ -3,6 +3,7 @@
 #import "PCKCheckItemCell.h"
 #import "PCKItem.h"
 #import "PCKBuyButton.h"
+#import "PCKAddItemController.h"
 
 @interface PCKCheckListViewController(){
     NSMutableSet * _checkedItems;
@@ -29,7 +30,8 @@
 
 - (void)addItem: (id)sender
 {
-    NSLog(@"TODO add");
+    PCKAddItemController * addItemController = [[PCKAddItemController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:addItemController animated:YES];
 }
 
 - (void)editItems: (id)sender
@@ -41,12 +43,20 @@
 {
     _isChecking = NO;
     [_checkedItems removeAllObjects];
+    for (UIBarButtonItem * button in self.navigationItem.rightBarButtonItems){
+        button.enabled = YES;
+    }
+
     [self.tableView reloadData];
 }
 
 - (void)startChecking
 {
     _isChecking = YES;
+    for (UIBarButtonItem * button in self.navigationItem.rightBarButtonItems){
+        button.enabled = NO;
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -135,10 +145,15 @@
     [super viewDidAppear:animated];
     // place any dynamic stuff you want to initialize in the child view here
     [self.navigationController.toolbar addSubview:self.progressView];
-    [self.navigationController setToolbarHidden:NO];
+    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;    
     self.navigationController.toolbar.tintColor = [UIColor blackColor];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:NO];
 }
 
 

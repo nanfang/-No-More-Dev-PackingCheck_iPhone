@@ -7,7 +7,7 @@
 //
 
 #import "PCKItem.h"
-
+#import "pinyin.h"
 
 @implementation PCKItem
 @synthesize itemId=_itemId, name=_name;
@@ -33,6 +33,21 @@
 {
     return [[PCKItem alloc]initWithId:itemId name:name];
     
+}
+
++ (NSMutableArray*) all
+{
+    return [self find:@"SELECT * FROM item"];
+}
+
+-(NSString*)indexName
+{
+    char myChar = pinyinFirstLetter([_name characterAtIndex:0]);
+    if (myChar == '#'){
+        return [_name substringToIndex:1];
+    }
+    return [NSString stringWithFormat:@"%c" , myChar];
+
 }
 
 @end
